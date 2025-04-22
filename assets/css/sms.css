@@ -2443,10 +2443,10 @@ section,
 }
 
 .sms-heading {
+    font-family: "Poppins";
+    color: #fbc013;
     font-size: 22px;
     font-weight: 700;
-    margin-bottom: 20px;
-    color: #fbc013;
     padding-bottom: 20px;
     position: relative;
     text-align: center; 
@@ -2668,4 +2668,31 @@ background-color: #1aa3ab;
 /* p */
 .p{
 
+}
+
+
+ .quicklink-box {
+  padding: 15px;
+  background-color: #1aa3ab;
+  margin: 22px 0 0px;
+  position: relative;
+display: flex;
+width: 47%;
+border-radius: 10px;
+}
+
+
+
+.contact-content{
+
+}
+.contact-content p{
+  font-size: 18px;
+  color: #fff;
+  margin: 2px;
+}
+
+.contact-content h5{
+  font-size: 18px;
+  color: #fff;
 }
