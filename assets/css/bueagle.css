@@ -2166,12 +2166,24 @@ section,
 }
 
 .contact-content p {
+display: flex;
+width: 40%;
+border-radius: 10px;
+}
+
+
+
+.contact-content{
+
+}
+.contact-content p{
   font-size: 14px;
   color: #fff;
   margin: 2px;
 }
 
 .contact-content h5 {
+
   font-size: 14px;
   color: #fff;
 }
@@ -2187,7 +2199,8 @@ section,
 
 .flowchart-bueagle{
   text-align: center;
- 
+  margin: 5% 0;
+  background-color: #e7e7e7;
   padding: 5%;
 }
 
@@ -2196,6 +2209,7 @@ section,
   text-align: center;
  
   padding: 5%;
+
 }
 
 
@@ -2239,3 +2253,4 @@ section,
   right:0;
     background: linear-gradient(to left, rgba(var(--marquee-bg-color-rgba), 1), rgba(var(--marquee-bg-color-rgba), 0));
 }
+
