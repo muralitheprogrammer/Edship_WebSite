@@ -467,7 +467,7 @@ window.onclick = (e) => {
 // toggele
 
 document.addEventListener('DOMContentLoaded', function () {
-  const duration = 100000; //ms
+  const duration = 20000; //ms
   const directionAnimation = 'left';  //left or right  
 
   const marquee = document.querySelector('.marquee');

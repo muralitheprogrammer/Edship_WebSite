@@ -626,7 +626,7 @@ h6 {
 }
 
 .support-icon {
-  width: 60px;
+  width: 49px;
   height: auto;
   margin-right: 15px;
 }
@@ -2465,7 +2465,7 @@ section,
 
 .eco-wrapper {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0px auto;
   padding: 20px;
 }
 
@@ -2475,7 +2475,7 @@ section,
   color: #fbc013;
   font-size: 22px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 53px;
   text-align: center;
 }
 
@@ -2484,7 +2484,7 @@ section,
   height: 3px;
   width: 100px;
   background-color: #2a9d8f;
-  margin: 15px auto 40px;
+  margin: 0px auto 40px;
 }
 
 /* Sections Container */
@@ -2504,9 +2504,10 @@ section,
 
 .eco-column-title {
   color: #2c5282;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
+  
 }
 
 /* Sister Concern Container */
@@ -2543,7 +2544,7 @@ section,
 
 /* Logo Container Styling */
 .eco-box {
-  border: 1px solid #1a1b1b;
+  border: 1px solid #1aa3ab;
   border-radius: 10px;
   padding: 30px;
   background-color: #fff;
@@ -2555,7 +2556,7 @@ section,
 }
 
 .eco-box-images {
-  border: 1px solid #141414;
+  border: 1px solid #1aa3ab;
   border-radius: 10px;
   padding: 30px;
   background-color: #fff;
@@ -2573,7 +2574,7 @@ section,
 }
 
 .eco-box-offset {
-  border: 1px solid #121212;
+  border: 1px solid #1aa3ab;
   border-radius: 8px;
   padding: 20px;
   background-color: #fff;
@@ -2582,7 +2583,7 @@ section,
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 85px;
+  margin-top: 82px;
 }
 
 .eco-image {
@@ -2899,4 +2900,51 @@ form button:hover {
 }
 
 
+.quicklink-box {
+  padding: 15px;
+  background-color: #1aa3ab;
+  margin: 22px 0 0px;
+  position: relative;
+  display: flex;
+  width: 45%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .quicklink-box {
+    
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.contact-content {
+  flex: 1 1 100%;
+}
+
+.contact-content p {
+  font-size: 14px;
+  color: #fff;
+  margin: 2px;
+}
+
+.contact-content h5 {
+  font-size: 14px;
+  color: #fff;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+}
