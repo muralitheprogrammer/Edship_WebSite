@@ -2187,7 +2187,12 @@ section,
 
 .flowchart-bueagle{
   text-align: center;
+<<<<<<< HEAD
  
+=======
+  margin: 5% 0;
+  background-color: #e7e7e7;
+>>>>>>> 5d2873c14fd84c041e43b32c7b9ba251542e1a8a
   padding: 5%;
 }
 
@@ -2196,6 +2201,10 @@ section,
   text-align: center;
  
   padding: 5%;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d2873c14fd84c041e43b32c7b9ba251542e1a8a
 }
 
 
@@ -2239,3 +2248,7 @@ section,
   right:0;
     background: linear-gradient(to left, rgba(var(--marquee-bg-color-rgba), 1), rgba(var(--marquee-bg-color-rgba), 0));
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d2873c14fd84c041e43b32c7b9ba251542e1a8a

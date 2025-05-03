@@ -2909,3 +2909,39 @@ section,
 
 
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .quicklink-box {
+    
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.contact-content {
+  flex: 1 1 100%;
+}
+
+.contact-content p {
+  font-size: 14px;
+  color: #fff;
+  margin: 2px;
+}
+
+.contact-content h5 {
+  font-size: 14px;
+  color: #fff;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+}
