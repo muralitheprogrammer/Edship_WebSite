@@ -2187,7 +2187,8 @@ section,
 
 .flowchart-bueagle{
   text-align: center;
- 
+  margin: 5% 0;
+  background-color: #e7e7e7;
   padding: 5%;
 }
 
