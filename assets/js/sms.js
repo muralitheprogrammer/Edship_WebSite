@@ -347,3 +347,151 @@ document.addEventListener("DOMContentLoaded", () => {
         }, {passive: true});
     }
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const duration = 20000; //ms
+  const directionAnimation = 'left';  //left or right  
+
+  const marquee = document.querySelector('.marquee');
+  const span = marquee.querySelector('span');
+
+  const marqueeWidth = marquee.offsetWidth;
+  const spanWidth = span.offsetWidth;
+
+ let keyframes = [];
+ if('left' == directionAnimation){
+   keyframes = [        
+      { transform: `translateX(${marqueeWidth}px)` },
+      { transform: `translateX(${-spanWidth}px)` }
+  ];
+ }
+ else if('right' == directionAnimation){
+    keyframes = [        
+      { transform:  `translateX(${-spanWidth}px)`},
+      { transform: `translateX(${marqueeWidth}px)` }
+  ];
+ }
+
+  let options = {
+      duration: duration, // Durata dell'animazione in millisecondi
+      iterations: Infinity,
+      easing: "linear"
+  };
+
+  const marqueeAnimation = span.animate(keyframes, options);
+  
+  marquee.addEventListener('mouseenter', () => {
+     marqueeAnimation.pause();
+  });
+
+  marquee.addEventListener('mouseleave', () => {
+      marqueeAnimation.play();
+  });
+});
+
+
+
+
+function openModal(event) {
+  event.preventDefault();
+  document.getElementById('enquiryModal').style.display = 'block';
+}
+
+function closeModal() {
+  document.getElementById('enquiryModal').style.display = 'none';
+}
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+
+  // Optional: send form data here via AJAX
+
+  // Trigger PDF download
+  window.location.href = 'assets/img/pdf/pdfschool.pdf';
+
+  // Close the modal
+  closeModal();
+}
+
+// Optional: Close modal when clicking outside
+window.onclick = function(event) {
+  const modal = document.getElementById('enquiryModal');
+  if (event.target == modal) {
+    closeModal();
+  }
+}
+
+// 
+
+
+// Function to open the modal
+function openModal(event) {
+  // Prevent default link behavior
+  event.preventDefault();
+  
+  // Show the modal
+  document.getElementById('enquiryModal').style.display = 'block';
+  
+  // Prevent scrolling on the body when modal is open
+  document.body.style.overflow = 'hidden';
+}
+
+// Function to close the modal
+function closeModal() {
+  // Hide the modal
+  document.getElementById('enquiryModal').style.display = 'none';
+  
+  // Reset form and views
+  document.getElementById('form-container').style.display = 'block';
+  document.getElementById('thank-you-container').style.display = 'none';
+  document.getElementById('brochureForm').reset();
+  
+  // Allow scrolling on the body again
+  document.body.style.overflow = 'auto';
+}
+
+// Function to handle form submission
+function handleFormSubmit(event) {
+  // Prevent default form submission
+  event.preventDefault();
+  
+  // Get form values
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const email = document.getElementById('email').value;
+  
+  // Basic form validation
+  if (!name || !phone || !email) {
+      alert('Please fill all required fields');
+      return;
+  }
+  
+  // In a real application, you would send this data to your server
+  console.log('Form submitted:', { name, phone, email });
+  
+  // Hide the form container
+  document.getElementById('form-container').style.display = 'none';
+  
+  // Show the thank you container
+  document.getElementById('thank-you-container').style.display = 'block';
+  
+  // Automatically trigger the download after a short delay
+  setTimeout(function() {
+      document.getElementById('download-link').click();
+  }, 500);
+}
+
+// When the document is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Close modal when clicking outside the modal content
+  window.onclick = function(event) {
+      const modal = document.getElementById('enquiryModal');
+      if (event.target == modal) {
+          closeModal();
+      }
+  }
+});
+
+

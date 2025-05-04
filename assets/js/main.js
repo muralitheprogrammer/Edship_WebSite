@@ -467,7 +467,7 @@ window.onclick = (e) => {
 // toggele
 
 document.addEventListener('DOMContentLoaded', function () {
-  const duration = 100000; //ms
+  const duration = 50000; //ms
   const directionAnimation = 'left';  //left or right  
 
   const marquee = document.querySelector('.marquee');
@@ -506,5 +506,22 @@ document.addEventListener('DOMContentLoaded', function () {
       marqueeAnimation.play();
   });
 });
+
+
+
+window.onload = function () {
+  console.log("Popup script running..."); // Debug line
+  document.getElementById("studentPopup").style.display = "flex";
+};
+
+function closePopup() {
+  document.getElementById("studentPopup").style.display = "none";
+}
+
+function explorePortal() {
+  alert("Redirecting to the Student Management Dashboard...");
+}
+
+
 
 
