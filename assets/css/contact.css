@@ -735,7 +735,10 @@ header h1 {
   font-size: 2.5rem;
   color: #333;
   margin-bottom: 15px;
+<<<<<<< HEAD
   font-family: poppins;
+=======
+>>>>>>> 5798161c5d1c34c578c8bd7439e70d2465ed583f
 }
 
 header p {
@@ -1005,7 +1008,10 @@ input, select, textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
+<<<<<<< HEAD
   color: #939393;
+=======
+>>>>>>> 5798161c5d1c34c578c8bd7439e70d2465ed583f
 }
 
 button {
@@ -1043,7 +1049,11 @@ button:hover {
   background-color: #0097a7;
   color: white;
   margin-top: 15px;
+<<<<<<< HEAD
 }
 
 
 
+=======
+}
+>>>>>>> 5798161c5d1c34c578c8bd7439e70d2465ed583f
