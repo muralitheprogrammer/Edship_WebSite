@@ -450,24 +450,24 @@ function setEqualHeights(el) {
 
 
 
-const openBtn = document.getElementById("openPopup");
-const closeBtn = document.getElementById("closePopup");
-const popup = document.getElementById("popup");
+// const openBtn = document.getElementById("openPopup");
+// const closeBtn = document.getElementById("closePopup");
+// const popup = document.getElementById("popup");
 
-openBtn.onclick = (e) => {
-  e.preventDefault();
-  popup.style.display = "block";
-};
-closeBtn.onclick = () => popup.style.display = "none";
-window.onclick = (e) => {
-  if (e.target === popup) popup.style.display = "none";
-};
+// openBtn.onclick = (e) => {
+//   e.preventDefault();
+//   popup.style.display = "block";
+// };
+// closeBtn.onclick = () => popup.style.display = "none";
+// window.onclick = (e) => {
+//   if (e.target === popup) popup.style.display = "none";
+// };
 
 
 // toggele
 
 document.addEventListener('DOMContentLoaded', function () {
-  const duration = 100000; //ms
+  const duration = 20000; //ms
   const directionAnimation = 'left';  //left or right  
 
   const marquee = document.querySelector('.marquee');
@@ -506,5 +506,11 @@ document.addEventListener('DOMContentLoaded', function () {
       marqueeAnimation.play();
   });
 });
+
+
+
+
+
+
 
 

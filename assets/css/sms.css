@@ -66,10 +66,10 @@ a {
   transition: 0.3s;
 }
 
-a:hover {
+/* a:hover {
   color: color-mix(in srgb, var(--accent-color), transparent 25%);
   text-decoration: none;
-}
+} */
 
 h1,
 h2,
@@ -78,7 +78,7 @@ h4,
 h5,
 h6 {
   color: var(--heading-color);
-  font-family:  "Mulish";
+  /* font-family:  "Mulish"; */
 }
 
 
@@ -594,7 +594,7 @@ h6 {
 }
 
 .support-icon {
-  width: 60px; 
+  width: 49px; 
   height: auto;
   margin-right: 15px;
 }
@@ -732,6 +732,7 @@ section,
   padding: 60px 0;
   scroll-margin-top: 90px;
   overflow: clip;
+  margin-bottom: 5%;
 }
 
 @media (max-width: 1199px) {
@@ -827,7 +828,7 @@ section,
 
 .hero p {
   color: black;
-  margin: 5px 0 30px 0;
+  margin: 5px 10px 30px 0;
   font-size: 18px;
   font-weight: 500;
 }
@@ -1649,7 +1650,6 @@ section,
 }
 .highlighted-class1{
   color:#4db173;
-  font-family: "Satisfy", cursive;
   font-weight: 400;
   font-style: normal;
   font-size: 22px;
@@ -1706,9 +1706,8 @@ section,
 }
 
 .features .details {
-  margin-top: 80px;
+  
   padding: 120px 0;
-  background-color: color-mix(in srgb, var(--default-color), transparent 97%);
 }
 
 .features .details h4 {
@@ -1945,6 +1944,7 @@ section,
   left: calc(50% - 36px);
 }
 
+
 .services .details h3 {
   font-weight: 700;
   margin: 10px 0 15px 0;
@@ -1974,6 +1974,8 @@ section,
 
 .services .service-item:hover .img img {
   transform: scale(1.2);
+  color: var(--accent-color);
+  
 }
 /*--------------------------------------------------------------
 # Work Process Section
@@ -2443,10 +2445,10 @@ section,
 }
 
 .sms-heading {
+    font-family: "Poppins";
+    color: #fbc013;
     font-size: 22px;
     font-weight: 700;
-    margin-bottom: 20px;
-    color: #fbc013;
     padding-bottom: 20px;
     position: relative;
     text-align: center; 
@@ -2668,4 +2670,365 @@ background-color: #1aa3ab;
 /* p */
 .p{
 
+}
+
+
+.quicklink-box {
+  padding: 15px;
+  background-color: #1aa3ab;
+  /* margin: 22px 0 0px; */
+  position: relative;
+  display: flex;
+  width: 65%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .quicklink-box {
+    
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.contact-content {
+  flex: 1 1 100%;
+}
+
+.contact-content p {
+  font-size: 14px;
+  color: #fff;
+  margin: 2px;
+}
+
+.contact-content h5 {
+  font-size: 14px;
+  color: #fff;
+}
+
+
+
+
+:root{
+  --marquee-bg-color: #f1f1f1;
+  --marquee-bg-color-rgba: 241, 241, 241;
+}
+*{
+  box-sizing: border-box;
+}
+.marquee {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            background-color: var(--marquee-bg-color);
+            padding:1px;
+        }
+        .marquee span {
+            display: inline-block;
+            font-size: 16px;
+            color: #1aa3ab;
+            will-change: transform;
+            align-self: center;
+        }
+
+.marquee::before, .marquee::after{
+  content: "";
+  position: absolute;
+  top:0;
+  bottom:0;
+  width:10px;
+  z-index:2;
+}
+
+.marquee::before{
+  left:0;
+  background: linear-gradient(to right, rgba(var(--marquee-bg-color-rgba), 1), rgba(var(--marquee-bg-color-rgba), 0));
+}
+.marquee::after{
+  right:0;
+    background: linear-gradient(to left, rgba(var(--marquee-bg-color-rgba), 1), rgba(var(--marquee-bg-color-rgba), 0));
+}
+
+
+
+.page-content {
+  max-width: 1200px;
+}
+
+.page-content h1 {
+  margin-bottom: 20px;
+  color: #1a365d;
+}
+
+/* e-Guide link styling */
+.eGuidStyle {
+  display: inline-block;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  margin: 40px auto;
+  width: 80%; /* Reduced from 90% */
+  max-width: 800px; /* Reduced from 1000px */
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.close:hover {
+  color: #000;
+}
+
+/* Brochure container */
+.brochure-container {
+  display: flex;
+  background-color: #e6f0ff;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Image section */
+.image-section {
+  flex: 0.8; /* Reduced from 1 */
+  position: relative;
+  padding: 15px; /* Reduced from 20px */
+}
+
+.image-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.decorative-flags {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(90deg, 
+      rgba(255,165,0,0.7) 0%, 
+      rgba(255,192,203,0.7) 25%, 
+      rgba(144,238,144,0.7) 50%, 
+      rgba(173,216,230,0.7) 75%, 
+      rgba(255,255,0,0.7) 100%);
+  border-radius: 10px 10px 0 0;
+}
+
+/* Form section */
+.form-section {
+  flex: 1.2; /* Increased ratio compared to image section */
+  padding: 30px; /* Reduced from 40px */
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 8px; /* Reduced from 10px */
+  font-size: 1.4rem; /* Reduced from 1.5rem */
+}
+
+h1 {
+  color: #1a365d;
+  margin-bottom: 15px; /* Reduced from 20px */
+  font-size: 1.6rem; /* Reduced from 1.8rem */
+  line-height: 1.3;
+}
+
+
+
+p {
+  color: #555;
+  margin-bottom: 15px; /* Reduced from 20px */
+  line-height: 1.5;
+  font-size: 0.95rem; /* Slightly smaller text */
+}
+
+.form-group {
+  margin-bottom: 15px; /* Reduced from 20px */
+}
+
+label {
+  display: block;
+  margin-bottom: 6px; /* Reduced from 8px */
+  color: #333;
+  font-weight: 500;
+  font-size: 0.95rem; /* Slightly smaller text */
+}
+
+/* .required {
+  color: #ff5722;
+} */
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px 15px; /* Reduced from 12px 15px */
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  font-size: 0.95rem; /* Slightly smaller text */
+  outline: none;
+}
+
+textarea {
+  border-radius: 20px;
+  min-height: 80px; /* Reduced from 100px */
+  resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #4a90e2;
+}
+
+.phone-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.country-code {
+  display: flex;
+  align-items: center;
+  padding: 0 12px; /* Reduced from 0 15px */
+  background-color: white;
+  border-right: 1px solid #ddd;
+}
+
+.country-code img {
+  width: 18px; /* Reduced from 20px */
+  margin-right: 5px;
+}
+
+.phone-input input {
+  border: none;
+  border-radius: 0;
+}
+
+.download-btn {
+  background-color: #1aa3ab;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 25px; /* Reduced from 15px 30px */
+  font-size: 0.95rem; /* Slightly smaller text */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+
+/* Thank you content */
+.thank-you-content {
+  background-color: #e6f0ff;
+  padding: 40px 30px; /* Reduced from 60px 40px */
+  text-align: center;
+  border-radius: 20px;
+}
+
+.success-icon {
+  width: 70px; /* Reduced from 80px */
+  height: 70px; /* Reduced from 80px */
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px; /* Reduced from 40px */
+  margin: 0 auto 15px; /* Reduced from 20px */
+}
+
+.thank-you-content h2 {
+  font-size: 1.8rem; /* Reduced from 2rem */
+  color: #1a365d;
+  margin-bottom: 15px; /* Reduced from 20px */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .brochure-container {
+      flex-direction: column;
+  }
+  
+  .image-section, .form-section {
+      width: 100%;
+  }
+  
+  h1 {
+      font-size: 1.4rem; /* Reduced from 1.5rem */
+  }
+  
+  .modal-content {
+      width: 90%;
+      margin: 20px auto;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .modal-content {
+      width: 95%;
+      margin: 10px auto;
+  }
+  
+  .form-section {
+      padding: 20px;
+  }
+  
+  h1 {
+      font-size: 1.3rem;
+  }
+}
+
+
+
+
+
+.guide-container{
+  background-color: #f3f9ff;
+  padding-top:  5%;
 }
