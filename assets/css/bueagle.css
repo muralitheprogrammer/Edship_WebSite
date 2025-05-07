@@ -760,6 +760,8 @@ section,
   color: #fbc013;
   padding-bottom: 20px;
   position: relative;
+  
+  
 }
 
 
@@ -779,6 +781,7 @@ section,
 .section-title p {
   margin-bottom: 0;
   font-size: 16px;
+  color: #555;
 }
 
 /*--------------------------------------------------------------
@@ -878,11 +881,11 @@ section,
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
 .hero img {
-  max-width: 15%;
+  max-width: 12%;
   height: auto;
   display: block;
   
-  margin-bottom: 2px; 
+  margin-bottom: 30px; 
 }
 
 @media (max-width: 640px) {
@@ -2239,4 +2242,16 @@ section,
 .marquee::after{
   right:0;
     background: linear-gradient(to left, rgba(var(--marquee-bg-color-rgba), 1), rgba(var(--marquee-bg-color-rgba), 0));
+}
+
+
+
+.section-title1{
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fbc013;
+  padding-bottom: 20px;
+  position: relative;
+  
 }
