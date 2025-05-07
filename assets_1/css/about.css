@@ -27,11 +27,11 @@ a:focus {
   text-decoration: none;
 }
 
-a:focus,
+/* a:focus,
 a:hover {
   color: #2d4a8a;
   text-decoration: none;
-}
+} */
 
 a,
 button,
@@ -218,11 +218,11 @@ a.nav-link,
 
 /* Colors */
 .ttm-textcolor-skincolor,
-.ttm-textcolor-white a:hover,
+
 .ttm-btn-color-skincolor,
 .ttm-btn.ttm-btn-color-skincolor,
-.ttm-btn.ttm-btn-color-darkgrey.btn-inline:hover,
-.ttm-topbar-wrapper.ttm-textcolor-white a:hover,
+
+
 .section-title h5,
 .section-title h2.title span,
 .ttm-bgcolor-white .section-title h5,
@@ -262,8 +262,8 @@ ul li .icon-box.icon-style-border i,
 .timing-box i,
 .widget_info .widget_icon,
 .ttm-bgcolor-grey.ttm-topbar-wrapper .social-icons li > a:hover i {
-  color: #1aa3ab;
-  text-decoration: none;
+  color: #FFF;
+  
 }
 
 /* Background Colors */
@@ -352,7 +352,7 @@ div.product ul.tabs li a:before,
 /* About Page Specific Styles */
 .background-container {
   height: 300px;
-  background-image: url("../img/about-banner.jpg");
+  background-image: url("../images/about.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -441,22 +441,25 @@ div.product ul.tabs li a:before,
   transition: all 0.3s ease;
 }
 
-.widget-menu li a:hover {
+/* .widget-menu li a:hover {
   color: #1aa3ab;
   padding-left: 20px;
-}
+} */
 
-.widget-menu li.active a {
+/* .widget-menu li.active a {
   color: #1aa3ab;
   font-weight: 600;
-}
+} */
 
-.widget_media_image .banner-img-box {
+/* .widget_media_image .banner-img-box {
   background-color: #1aa3ab;
   padding: 25px;
   border-radius: 5px;
   color: white;
-}
+} */
+ .banner-img-box{
+  background-repeat: no-repeat;
+ }
 
 .widget_media_image .featured-title h5 {
   color: white;
@@ -504,7 +507,7 @@ div.product ul.tabs li a:before,
 .content-area h3 {
   font-size: 28px;
   margin-bottom: 20px;
-  color: #1e2637;
+  color: #fbc013;
 }
 
 .mt-35 {
@@ -518,7 +521,7 @@ div.product ul.tabs li a:before,
 .ttm-service-description h5 {
   font-size: 20px;
   margin-bottom: 15px;
-  color: #1e2637;
+  color: #2d465e;
 }
 
 .ttm-list {
@@ -533,12 +536,12 @@ div.product ul.tabs li a:before,
   margin-bottom: 10px;
 }
 
-.ttm-list li i {
+/* .ttm-list li i {
   position: absolute;
   left: 0;
   top: 5px;
   color: #1aa3ab;
-}
+} */
 
 .ttm-list-li-content {
   display: inline-block;
@@ -623,11 +626,11 @@ div.product ul.tabs li a:before,
   -moz-osx-font-smoothing: grayscale;
 }
 
-.fa-check-circle:before,
+/* .fa-check-circle:before,
 .ttm-textcolor-skincolor i:before {
   content: "\f058";
   color: #1aa3ab;
-}
+} */
 
 .fa-phone:before {
   content: "\f095";
@@ -668,4 +671,106 @@ div.product ul.tabs li a:before,
 
 .bi-arrow-up-short:before {
   content: "\f176";
+}
+/*  */
+
+
+.navmenu li {
+  position: relative;
+}
+
+/* Hide submenu by default */
+.navmenu .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background-color: #fff;
+  padding: 10px 0;
+  border-radius: 4px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Show dropdown on hover */
+.navmenu li:hover > .dropdown-menu {
+  display: block;
+  border-radius: 0px;
+  margin: 11px;
+}
+
+/* Dropdown items */
+.navmenu .dropdown-menu li {
+  padding: 0;
+}
+
+.navmenu .dropdown-menu li a {
+  display: block;
+  padding: 12px 20px;
+  color: #222;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+
+}
+
+/* Hover effect */
+.navmenu .dropdown-menu li a:hover {
+  background-color: #f5f7fa;
+}
+
+
+
+
+/*  */
+
+
+/* Topbar styling with increased font size */
+.header .topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  font-family: "Poppins", sans-serif;
+  background-color: #1aa3ab;
+  height: 40px;
+  padding: 0;
+  font-size: 25px; /* Increased from 14px */
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+}
+
+.header .topbar .contact-info i {
+  font-style: normal;
+  color: #fff;
+}
+
+.header .topbar .contact-info i a,
+.header .topbar .contact-info i span {
+  padding-left: 5px;
+  color: #fff;
+  font-size: 16px; /* Increased font size */
+  font-weight: 500; /* Added slightly bolder font */
+}
+
+/* Make sure the icons are properly sized */
+.header .topbar .bi {
+  font-size: 16px;
+}
+
+/* Ensure proper vertical alignment */
+.header .topbar .d-flex {
+  align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 575px) {
+  .header .topbar .contact-info i a,
+  .header .topbar .contact-info i span {
+    font-size: 14px; /* Slightly smaller on mobile but still readable */
+  }
 }

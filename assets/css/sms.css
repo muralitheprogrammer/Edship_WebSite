@@ -256,11 +256,11 @@ h6 {
     font-size: 12px;
   }
 
-  .navmenu .dropdown ul a:hover,
+  /* .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
   .navmenu .dropdown ul li:hover>a {
     color: var(--nav-dropdown-hover-color);
-  }
+  } */
 
   .navmenu .dropdown:hover>ul {
     opacity: 1;
