@@ -2776,6 +2776,7 @@ section,
 }
 *{
   box-sizing: border-box;
+  font-family: poppins;
 }
 .marquee {
             position: relative;

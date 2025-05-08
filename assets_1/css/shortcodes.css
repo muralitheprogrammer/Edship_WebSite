@@ -2666,14 +2666,15 @@ ul.ttm-recent-post-list>li .post-date i{margin-right: 7px;font-size: 11px;}
     border: 1px dashed rgba(255, 255, 255, .2)
 }
 .banner-img-box .featured-content i{font-size: 50px;}
-.banner-img-box .featured-content{padding: 30px;}
+.banner-img-box .featured-content{padding: 30px; text-align: left;}
 .banner-img-box .featured-content .featured-title h5 {
     font-size: 22px;
     line-height: 28px;
     font-weight: 500;
-    font-family: Montserrat;
+    font-family: poppins;
     margin-bottom: 10px;
     padding-top: 20px;
+    
 }
 .banner-img-box .featured-content .featured-desc p {
     font-size: 14px;

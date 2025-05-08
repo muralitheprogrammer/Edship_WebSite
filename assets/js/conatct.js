@@ -1,33 +1,35 @@
-document.addEventListener('DOMContentLoaded', function() {
-  (function() {
-    emailjs.init('ouVi9BrVZOp6-YpBq'); // <-- your public key
-  })();
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('.php-email-form');
+  const thankYouPopup = document.getElementById('thankYouPopup');
+  const submitBtn = form.querySelector('button[type="submit"]');
 
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent the default form submission
 
-    const submitButton = document.querySelector('#contact-form button[type="submit"]');
-    submitButton.disabled = true;  // Disable the button while submitting
+    // Disable the submit button and show loading text
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
 
-    const loadingMessage = document.createElement('span');
-    loadingMessage.textContent = 'Sending message...';
-    submitButton.parentElement.appendChild(loadingMessage);
+    // Simulate form submission delay (replace with actual AJAX request)
+    setTimeout(function () {
+      // Example: Simulate success after 2 seconds
+      const success = true; // Simulate successful submission
 
-    emailjs.send("service_7hrk3xt","template_ypuboq6",this)
-      .then(function(response) {
-         console.log('SUCCESS!', response.status, response.text);
-         alert('Your message has been sent successfully!');
-         document.getElementById('contact-form').reset();
-         submitButton.disabled = false; // Re-enable the button
-         loadingMessage.remove(); // Remove the loading message
-      }, function(error) {
-         console.log('FAILED...', error);
-         alert('There was a problem sending your message. Please try again.');
-         submitButton.disabled = false; // Re-enable the button
-         loadingMessage.remove(); // Remove the loading message
-      });
+      if (success) {
+        // Show the Thank You popup
+        thankYouPopup.style.display = 'block';
+
+        // Optionally, reset the form
+        form.reset();
+      }
+
+      // Reset the submit button text and enable it again
+      submitBtn.textContent = 'Send Message';
+      submitBtn.disabled = false;
+    }, 2000); // Simulate a delay of 2 seconds
   });
 });
+
 
 
 
