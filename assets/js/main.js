@@ -658,21 +658,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-const modal = document.getElementById("enquiryModal");
-const openBtn = document.getElementById("bookNowBtn");
 
-openBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-  modal.style.display = "flex";
-});
+  const modal = document.getElementById("enquiryModal");
+  const openBtn = document.getElementById("bookNowBtn");
+  const form = document.getElementById("enquiryForm");
 
-function closeModal() {
-  modal.style.display = "none";
-}
+  // Open modal
+  openBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    modal.style.display = "flex";
+  });
 
-// Optional: Close modal on outside click
-window.onclick = function (e) {
-  if (e.target == modal) {
-    closeModal();
+  // Close modal function
+  function closeModal() {
+    modal.style.display = "none";
   }
-};
+
+  // Close modal if clicked outside
+  window.onclick = function (e) {
+    if (e.target == modal) {
+      closeModal();
+    }
+  };
+
+  // Handle form submission
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Optional: validate inputs or send data here
+
+    // Replace form content with thank you message
+    form.innerHTML = `
+      <div style="text-align: center; padding: 50px;">
+        <h2 style="color: green;">Thank you!</h2>
+        <p>Your submission has been received successfully.
+		Our team will get back to you shortly.</p>
+      </div>
+    `;
+
+    // Auto-close after 3 seconds
+    setTimeout(() => {
+      closeModal();
+
+      // Reset form after closing
+      setTimeout(() => {
+        location.reload(); // Reload to reset form
+      }, 500);
+    }, 3000);
+  });
+
