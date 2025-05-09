@@ -733,6 +733,63 @@
 
   </main>
 
+
+
+  <!-- popup -->
+
+  <div id="enquiryModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <div class="enquiry-header">ENQUIRE US NOW</div>
+      <form id="enquiryForm" class="enquiry-form">
+        <div class="enquiry-column">
+          <label>Name</label>
+          <input type="text" placeholder="Enter your name" required>
+        </div>
+        <div class="enquiry-column">
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email" required>
+        </div>
+        <div class="enquiry-column">
+          <label>School Name</label>
+          <input type="text" placeholder="Enter school name" required>
+        </div>
+        <div class="enquiry-column">
+          <label>Type</label>
+          <select required>
+            <option value="">Select type</option>
+            <option value="Public">Public</option>
+            <option value="Private">Private</option>
+            <option value="International">International</option>
+          </select>
+        </div>
+        <div class="enquiry-column">
+          <label>Your role in the school</label>
+          <select required>
+            <option value="">Select role</option>
+            <option value="Principal">Principal</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Administrator">Administrator</option>
+          </select>
+        </div>
+        <div class="enquiry-column">
+          <label>Phone Number</label>
+          <div class="phone-input-wrapper">
+            <span>+91</span>
+            <input type="tel" placeholder="Enter mobile number" required>
+          </div>
+        </div>
+        <div class="enquiry-column-full">
+          <label>Message</label>
+          <textarea rows="4" placeholder="Your message" required></textarea>
+        </div>
+        <div class="enquiry-column-full">
+          <button type="submit" class="submit-button">SUBMIT</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <footer id="footer" class="footer">
 
     <div class="container footer-top">

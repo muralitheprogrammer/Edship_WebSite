@@ -658,3 +658,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+const modal = document.getElementById("enquiryModal");
+const openBtn = document.getElementById("bookNowBtn");
+
+openBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  modal.style.display = "flex";
+});
+
+function closeModal() {
+  modal.style.display = "none";
+}
+
+// Optional: Close modal on outside click
+window.onclick = function (e) {
+  if (e.target == modal) {
+    closeModal();
+  }
+};

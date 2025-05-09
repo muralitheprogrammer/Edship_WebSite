@@ -2901,9 +2901,11 @@ input, select, textarea {
   width: 100%;
   padding: 10px 15px; /* Reduced from 12px 15px */
   border: 1px solid #ddd;
-  border-radius: 50px;
+ 
   font-size: 0.95rem; /* Slightly smaller text */
   outline: none;
+  background-color: #fff;
+  font-family: "poppins";
 }
 
 textarea {
@@ -3118,7 +3120,7 @@ input:focus, select:focus, textarea:focus {
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+ 
   outline: none;
 }
 
