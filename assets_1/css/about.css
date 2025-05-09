@@ -352,7 +352,7 @@ div.product ul.tabs li a:before,
 /* About Page Specific Styles */
 .background-container {
   height: 70vh;
-  background-image: url("../images/about.png");
+  background-image: url("../images/ABOUTT.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -367,7 +367,7 @@ div.product ul.tabs li a:before,
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
 .background-container .content {
