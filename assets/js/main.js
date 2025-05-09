@@ -512,5 +512,149 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+// 
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Script loaded');
+    
+    // Popup Elements
+    const bookNowBtn = document.getElementById('bookNowBtn');
+    const popupOverlay = document.getElementById('popupOverlay');
+    const closePopupBtn = document.getElementById('closePopup');
+    
+    // Form Elements
+    const edshipForm = document.getElementById('edshipForm');
+    const countryCode = document.getElementById('edshipCountryCode');
+    const dialCode = document.getElementById('edshipDialCode');
+    const countryFlag = document.getElementById('edshipCountryFlag');
+    const submitBtn = document.getElementById('edshipSubmitBtn');
+    
+    // Check if popup elements exist
+    if (!bookNowBtn) {
+        console.error('Book Now button not found!');
+    }
+    
+    if (!popupOverlay) {
+        console.error('Popup overlay not found!');
+    }
+    
+    if (!closePopupBtn) {
+        console.error('Close button not found!');
+    }
+    
+    // Open popup when Book Now button is clicked
+    if (bookNowBtn) {
+        bookNowBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Book Now button clicked');
+            popupOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+    }
+    
+    // Close popup when close button is clicked
+    if (closePopupBtn) {
+        closePopupBtn.addEventListener('click', function() {
+            console.log('Close button clicked');
+            popupOverlay.classList.remove('active');
+            document.body.style.overflow = ''; // Enable scrolling
+        });
+    }
+    
+    // Close popup when clicking outside the popup content
+    if (popupOverlay) {
+        popupOverlay.addEventListener('click', function(e) {
+            if (e.target === popupOverlay) {
+                console.log('Clicked outside popup');
+                popupOverlay.classList.remove('active');
+                document.body.style.overflow = ''; // Enable scrolling
+            }
+        });
+    }
+    
+    // Form validation and submission
+    if (edshipForm) {
+        edshipForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('edshipName').value;
+            const email = document.getElementById('edshipEmail').value;
+            const schoolName = document.getElementById('edshipSchool').value;
+            const type = document.getElementById('edshipType').value;
+            const role = document.getElementById('edshipRole').value;
+            const countryCodeValue = dialCode.textContent;
+            const phone = document.getElementById('edshipPhone').value;
+            const message = document.getElementById('edshipMessage').value;
+            
+            // Basic validation
+            if (!name || !email || !schoolName || !type || !role || !phone) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            // Phone validation (basic)
+            const phoneRegex = /^\d{6,15}$/;
+            if (!phoneRegex.test(phone)) {
+                alert('Please enter a valid phone number (6-15 digits)');
+                return;
+            }
+            
+            // Disable button and show loading state
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'SUBMITTING...';
+            }
+            
+            // Simulate form submission (replace with actual API call)
+            setTimeout(function() {
+                // Reset button
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'SUBMIT';
+                }
+                
+                // Close the popup after successful submission
+                popupOverlay.classList.remove('active');
+                document.body.style.overflow = ''; // Enable scrolling
+                
+                // Show success message
+                alert('Form submitted successfully!');
+                
+                // In a real implementation, you would send the data to your server
+                console.log('Form Data:', {
+                    name,
+                    email,
+                    schoolName,
+                    type,
+                    role,
+                    phoneNumber: `${countryCodeValue}${phone}`,
+                    message
+                });
+            }, 1500);
+        });
+    }
+    
+    // Add a direct click handler as a fallback
+    if (bookNowBtn) {
+        bookNowBtn.onclick = function(e) {
+            e.preventDefault();
+            console.log('Book Now button clicked (direct onclick)');
+            if (popupOverlay) {
+                popupOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        };
+    }
+});
+
+
+
 
 

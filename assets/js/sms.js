@@ -495,3 +495,93 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
+  // Country list with dialing codes (you can extend this list)
+  const countries = [
+    { name: "India", code: "+91" },
+    { name: "U S", code: "+1" },
+    { name: "U K", code: "+44" },
+    { name: "Canada", code: "+1" },
+    { name: "Australia", code: "+61" },
+    { name: "Germany", code: "+49" },
+    { name: "France", code: "+33" },
+    { name: "Singapore", code: "+65" },
+    { name: "UAE", code: "+971" },
+    { name: "China", code: "+86" },
+    { name: "Brazil", code: "+55" },
+    { name: "Japan", code: "+81" }
+  ];
+
+  // Populate country code dropdown
+  function populateCountryCodes() {
+    const select = document.getElementById("country-code");
+    select.innerHTML = ""; // Clear existing options
+
+    countries.forEach((country) => {
+      const option = document.createElement("option");
+      option.value = country.code;
+      option.text = `${country.name} (${country.code})`;
+      select.appendChild(option);
+    });
+
+    // Default to India
+    select.value = "+91";
+  }
+
+  // Open modal
+  function openModal(event) {
+    event.preventDefault();
+    document.getElementById("enquiryModal").style.display = "block";
+    document.getElementById("thank-you-container").style.display = "none";
+    document.querySelector(".enquiry-form-section").style.display = "block";
+    populateCountryCodes();
+  }
+
+  // Close modal
+  function closeModal() {
+    document.getElementById("enquiryModal").style.display = "none";
+  }
+
+  // Close thank you popup if using separate modal
+  function closeThankYou() {
+    document.getElementById("thank-you-container").style.display = "none";
+  }
+
+  // Handle form submission
+  function handleFormSubmit(event) {
+    event.preventDefault();
+
+    // You can validate or send data to server here...
+
+    // Simulate delay
+    setTimeout(() => {
+      // Reset form
+      document.getElementById("enquiryForm").reset();
+
+      // Hide form and show thank you message
+      document.querySelector(".enquiry-form-section").style.display = "none";
+      document.getElementById("thank-you-container").style.display = "block";
+
+      // Trigger brochure download
+      const downloadLink = document.createElement("a");
+      downloadLink.href = "assets/img/pdf/pdfschool.pdf";
+      downloadLink.download = "Edship_Brochure.pdf";
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    }, 400);
+  }
+
+  // Optional: Close modal when clicking outside
+  window.onclick = function (event) {
+    const modal = document.getElementById("enquiryModal");
+    if (event.target === modal) {
+      closeModal();
+    }
+  };
+
+  // Automatically populate country codes when page loads
+  window.onload = function () {
+    populateCountryCodes();
+  };
+
