@@ -772,6 +772,56 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// Add this JavaScript code to your main.js file or in a script tag at the end of your body
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile Navigation Toggle
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navmenu = document.querySelector('.navmenu');
+  
+  if (mobileNavToggle && navmenu) {
+    // Add close button to mobile menu
+    const closeBtn = document.createElement('div');
+    closeBtn.className = 'mobile-nav-close';
+    closeBtn.innerHTML = '<i class="bi bi-x"></i>';
+    navmenu.prepend(closeBtn);
+    
+    // Toggle mobile menu
+    mobileNavToggle.addEventListener('click', function(e) {
+      navmenu.classList.add('mobile-nav-active');
+      mobileNavToggle.classList.remove('bi-list');
+      mobileNavToggle.classList.add('bi-x');
+      e.preventDefault();
+    });
+    
+    // Close mobile menu
+    closeBtn.addEventListener('click', function() {
+      navmenu.classList.remove('mobile-nav-active');
+      mobileNavToggle.classList.remove('bi-x');
+      mobileNavToggle.classList.add('bi-list');
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!navmenu.contains(e.target) && !mobileNavToggle.contains(e.target)) {
+        navmenu.classList.remove('mobile-nav-active');
+        mobileNavToggle.classList.remove('bi-x');
+        mobileNavToggle.classList.add('bi-list');
+      }
+    });
+    
+    // Handle dropdown menus in mobile view
+    const dropdownLinks = document.querySelectorAll('.navmenu .dropdown > a');
+    
+    dropdownLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        if (window.innerWidth < 992) {
+          e.preventDefault();
+          this.nextElementSibling.classList.toggle('dropdown-active');
+        }
+      });
+    });
+  }
+});
 
 
