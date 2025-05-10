@@ -173,17 +173,24 @@
             </div>
 
 <!--  -->
-<div class="form-field half-width">
-  <div class="enquiry-group">
-    <label for="role">Your role in the school</label>
-    <select id="role" name="role" required>
-      <option value="" disabled selected>Select role</option>
-      <option value="principal">Principal</option>
-      <option value="teacher">Teacher</option>
-      <option value="admin">Administrator</option>
-    </select>
-  </div>
-</div>
+                           <div class="enquiry-row">
+                          <div class="enquiry-group">
+                            <label for="school">Name of your School</label>
+                            <input type="text" id="school" name="school" placeholder="Enter school name" required>
+                          </div>
+                          <div class="enquiry-group">
+                            <label for="type">Type</label>
+                            <select id="type" name="type" required>
+                              <option value="" disabled selected>Select role</option>
+                              <option value="Tution Centre">Tution Centre</option>
+                              <option value="College">College</option>
+                              <option value="PlaySchool">PlaySchool</option>
+                              <option value="Arabic College">Arabic College</option>
+                              <option value="Group Organization">Group Organization</option>
+                              <option value="University">University</option>
+                            </select>
+                          </div>
+                        </div>
 
 <div class="form-field half-width">
   <div class="enquiry-group">
@@ -198,10 +205,7 @@
 </div>
 
             <!-- Institute Name -->
-            <div class="col-md-12">
-              <input type="text" name="institute" class="form-control" placeholder="Institute Name" required>
-            </div>
-
+            
             <!-- Message -->
             <div class="col-md-12">
               <textarea class="form-control" name="message" rows="4" placeholder="Your Message" required></textarea>
@@ -214,8 +218,8 @@
               <div class="sent-message" style="color: rgb(243, 245, 243); display: none;"></div>
 
               <div id="thankYouPopup" class="thank-you-popup" style="display: none;">
-                <p>Thank you!
-                Your submission has been received successfully</p>
+                <p>Your submission has been received successfully.
+		Our team will get back to you shortly.</p>
               </div>
               
               <button type="submit">SUBMIT</button>
