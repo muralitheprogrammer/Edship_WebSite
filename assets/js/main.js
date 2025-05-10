@@ -707,3 +707,66 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 3000);
   });
 
+/**
+ * Thank You Popup Functionality
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  // Create thank you popup HTML structure
+  const thankYouPopup = document.createElement('div');
+  thankYouPopup.className = 'thank-you-popup';
+  thankYouPopup.innerHTML = `
+    <div class="thank-you-content">
+      <span class="thank-you-close">&times;</span>
+      <div class="checkmark-circle">
+        <div class="background"></div>
+        <div class="checkmark draw"></div>
+      </div>
+      <h2 class="thank-you-title">Thank You!</h2>
+      <p class="thank-you-message">Your enquiry has been submitted successfully. Our team will get back to you shortly.</p>
+      <button class="thank-you-button">Continue</button>
+    </div>
+  `;
+  document.body.appendChild(thankYouPopup);
+
+  // Get elements
+  const enquiryForm = document.getElementById('enquiryForm');
+  const enquiryModal = document.getElementById('enquiryModal');
+  const closeBtn = thankYouPopup.querySelector('.thank-you-close');
+  const continueBtn = thankYouPopup.querySelector('.thank-you-button');
+
+  // Function to show thank you popup
+  function showThankYouPopup() {
+    thankYouPopup.style.display = 'flex';
+  }
+
+  // Function to hide thank you popup
+  function hideThankYouPopup() {
+    thankYouPopup.style.display = 'none';
+  }
+
+  // Close thank you popup when clicking the close button
+  closeBtn.addEventListener('click', hideThankYouPopup);
+
+  // Close thank you popup when clicking the continue button
+  continueBtn.addEventListener('click', hideThankYouPopup);
+
+  // Handle form submission
+  if (enquiryForm) {
+    enquiryForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Here you would typically send the form data to your server
+      // For now, just show the thank you popup and close the enquiry modal
+      
+      // Close enquiry modal
+      enquiryModal.style.display = 'none';
+      document.body.style.overflow = '';
+      
+      // Reset form
+      enquiryForm.reset();
+      
+      // Show thank you popup
+      setTimeout(showThankYouPopup, 300);
+    });
+  }
+});

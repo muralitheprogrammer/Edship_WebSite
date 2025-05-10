@@ -173,15 +173,17 @@
             </div>
 
 <!--  -->
-<div class="enquiry-group">
-                            <label for="type">Type</label>
-                            <select id="type" name="type" required>
-                              <option value="" disabled selected>Select type</option>
-                              <option value="school">School</option>
-                              <option value="college">College</option>
-                              <option value="other">Other</option>
-                            </select>
-                          </div>
+<div class="form-field half-width">
+  <div class="enquiry-group">
+    <label for="role">Your role in the school</label>
+    <select id="role" name="role" required>
+      <option value="" disabled selected>Select role</option>
+      <option value="principal">Principal</option>
+      <option value="teacher">Teacher</option>
+      <option value="admin">Administrator</option>
+    </select>
+  </div>
+</div>
 
 <div class="form-field half-width">
   <div class="enquiry-group">
@@ -209,10 +211,11 @@
               <div class="error-message" style="color: red;"></div>
               
               <!-- Success (Thank You) Message -->
-              <div class="sent-message" style="color: green; display: none;"></div>
+              <div class="sent-message" style="color: rgb(243, 245, 243); display: none;"></div>
 
               <div id="thankYouPopup" class="thank-you-popup" style="display: none;">
-                <p>Your message has been sent. Thank you!</p>
+                <p>Thank you!
+                Your submission has been received successfully</p>
               </div>
               
               <button type="submit">SUBMIT</button>
