@@ -3196,3 +3196,282 @@ input:focus, select:focus, textarea:focus {
   border: 1px solid #ccc;
   border-radius: 6px;
 }
+
+
+
+/* Responsive Enquiry Form Styles */
+
+/* Base styles for the modal */
+.enquiry-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.enquiry-modal-content {
+  background-color:#f3f9ff;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Title & Subtitle */
+.enquiry-title {
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.enquiry-subtitle {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #666;
+}
+
+/* Form Structure */
+.enquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.enquiry-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.enquiry-group {
+  flex: 1;
+  min-width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.enquiry-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+.enquiry-group input,
+.enquiry-group select,
+.enquiry-group textarea {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.enquiry-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Phone Field Styling */
+.enquiry-phone-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.country-code-select {
+  width: 39%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.enquiry-phone-wrapper input[type="tel"] {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Submit Button */
+.enquiry-submit-btn {
+  background-color: #1aa3ab;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  align-self: center;
+  transition: background-color 0.3s ease;
+  width: auto;
+  min-width: 150px;
+}
+
+.enquiry-submit-btn:hover {
+  background-color: #158f96;
+}
+
+/* Close Button */
+.enquiry-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: #555;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Thank You Message */
+.enquiry-thank-you {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.enquiry-success-icon {
+  font-size: 50px;
+  color: green;
+  margin-bottom: 15px;
+}
+
+/* Responsive styles for larger tablets and smaller desktops */
+@media (max-width: 992px) {
+  .enquiry-modal-content {
+    width: 95%;
+    max-width: 700px;
+    padding: 25px;
+  }
+
+  .enquiry-title {
+    font-size: 24px;
+  }
+
+  .enquiry-subtitle {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Responsive styles for tablets */
+@media (max-width: 768px) {
+  .enquiry-modal-content {
+    margin: 10% auto;
+    padding: 20px;
+  }
+
+  .enquiry-row {
+    gap: 15px;
+  }
+
+  .enquiry-group {
+    min-width: 100%; /* Make all form fields full width on tablets */
+  }
+
+  .enquiry-title {
+    font-size: 22px;
+  }
+
+  .enquiry-subtitle {
+    font-size: 14px;
+  }
+
+  .enquiry-submit-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Responsive styles for mobile phones */
+@media (max-width: 576px) {
+  .enquiry-modal-content {
+    margin: 5% auto;
+    padding: 15px;
+    width: 95%;
+  }
+
+  .enquiry-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .enquiry-group label {
+    font-size: 13px;
+  }
+
+  .enquiry-group input,
+  .enquiry-group select,
+  .enquiry-group textarea {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .enquiry-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .enquiry-subtitle {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+
+  .enquiry-phone-wrapper {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .country-code-select {
+    width: 100%;
+  }
+
+  .enquiry-close {
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+  }
+}
+
+/* Responsive styles for small mobile phones */
+@media (max-width: 375px) {
+  .enquiry-modal-content {
+    padding: 12px;
+  }
+
+  .enquiry-form {
+    gap: 15px;
+  }
+
+  .enquiry-group {
+    margin-bottom: 0;
+  }
+
+  .enquiry-title {
+    font-size: 18px;
+  }
+
+  .enquiry-subtitle {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .enquiry-submit-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
