@@ -3369,7 +3369,7 @@ section,
 
 .close-btn {
   position: absolute;
-  top: 10px;
+  top: 0px;
   right: 15px;
   font-size: 24px;
   background: none;
@@ -3729,3 +3729,22 @@ textarea {
     font-size: 15px;
   }
 }
+
+
+
+.book-now-btn {
+  background-color: #ffc107; /* Bootstrap warning yellow */
+  color: white;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+/* .book-now-btn:hover {
+  background-color: #e0a800;
+  color: white;
+  text-decoration: none;
+} */
