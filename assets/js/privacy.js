@@ -39,3 +39,12 @@ ocument.addEventListener('DOMContentLoaded', function () {
     });
   });
   
+
+
+
+  // JavaScript to toggle the mobile menu
+document.getElementById('toggle-button').addEventListener('click', function() {
+  var navlist = document.getElementById('navlist');
+  navlist.classList.toggle('active');
+});
+

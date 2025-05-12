@@ -38,6 +38,8 @@
   <link rel="stylesheet" type="text/css" href="assets_1/css/shortcodes.css" />
   <link rel="stylesheet" type="text/css" href="assets_1/css/about.css" />
   <link rel="stylesheet" type="text/css" href="assets_1/css/responsive.css" />
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/bueagle.css">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -80,6 +82,10 @@
           <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91-6238506588</span></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
+          <div class="book-now ms-4">
+            <a href="#" class="book-now-btn" data-bs-toggle="modal" data-bs-target="#bookingModal" id="bookNowBtn">Book
+              A Demo</a>
+          </div>
           <a href="https://www.youtube.com/@edshiptechnologies"><i class="bi bi-youtube"></i></a>
           <a href="https://www.facebook.com/edshiptechnologies" class="facebook"><i class="bi bi-facebook"></i></a>
           <a href="https://www.instagram.com/edshiptechnologies" class="instagram"><i class="bi bi-instagram"></i></a>
@@ -274,6 +280,80 @@
     </a>
   </div>
 
+
+  <div id="enquiryModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <div class="enquiry-header">BOOK A DEMO</div>
+      <p class="enquiry-subtitle" style="text-align: center;">
+        Digitally revolutionize your school with Edship's all-in-one integrated platform fast, simple, and effective.
+      </p>
+
+      <form id="enquiryForm" class="enquiry-form">
+        <div class="enquiry-column">
+          <label>Name</label>
+          <input type="text" placeholder="Enter your name" required>
+        </div>
+        <div class="enquiry-column">
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email" required>
+        </div>
+        <div class="enquiry-column">
+          <label>School Name</label>
+          <input type="text" placeholder="Enter school name" required>
+        </div>
+        <div class="enquiry-column">
+          <label>Type</label>
+          <select required>
+            <option value="">Select type</option>
+            <option value="School">School</option>
+            <option value="Tution Centre">Tution Centre</option>
+            <option value="College">College</option>
+            <option value="PlaySchool">PlaySchool</option>
+            <option value="Arabic College">Arabic College</option>
+            <option value="Group Organization">Group Organization</option>
+            <option value="University">University</option>
+          </select>
+        </div>
+        <div class="enquiry-column">
+          <label>Your role in the school</label>
+          <select required>
+            <option value="">Select role</option>
+            <option value="Principal">Principal</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Student">Student</option>
+            <option value="Manager">Manager</option>
+
+          </select>
+        </div>
+        <div class="enquiry-column">
+          <label>Phone Number</label>
+          <div class="phone-input-wrapper">
+            <select required style="padding: 10px; border-radius: 5px; margin-right: 5px;">
+              <option value="+91" selected>🇮🇳 +91</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+61">🇦🇺 +61</option>
+              <option value="+971">🇦🇪 +971</option>
+              <option value="+81">🇯🇵 +81</option>
+              <option value="+49">🇩🇪 +49</option>
+              <option value="+33">🇫🇷 +33</option>
+              <option value="+880">🇧🇩 +880</option>
+              <!-- Add more country codes as needed -->
+            </select>
+            <input type="tel" placeholder="Enter mobile number" required style="flex: 1;">
+          </div>
+        </div>
+        <div class="enquiry-column-full">
+          <label>Message</label>
+          <textarea rows="4" placeholder="Your message" required></textarea>
+        </div>
+        <div class="enquiry-column-full">
+          <button type="submit" class="submit-button">SUBMIT</button>
+        </div>
+      </form>
+    </div>
+  </div>
   <!-- Footer Section -->
   <footer id="footer" class="footer">
     <div class="container footer-top">
