@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact</title>
+  <title>SMS</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -27,8 +27,9 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
+  <link href="assets/css/sms.css" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/css/contact.css">
-  <link rel="stylesheet" href="assets/css/main.css">
   <!-- FontAwesome -->
   <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
   <!-- Animation -->
@@ -42,7 +43,9 @@
 </head>
 
 <body class="index-page">
+
   <header id="header" class="header sticky-top">
+
     <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
@@ -50,10 +53,6 @@
           <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91-6238506588</span></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
-          <div class="book-now ms-4">
-            <a href="#" class="book-now-btn" data-bs-toggle="modal" data-bs-target="#bookingModal" id="bookNowBtn">Book
-              A Demo</a>
-          </div>
           <a href="https://www.youtube.com/@edshiptechnologies"><i class="bi bi-youtube"></i></a>
           <a href="https://www.facebook.com/edshiptechnologies" class="facebook"><i class="bi bi-facebook"></i></a>
           <a href="https://www.instagram.com/edshiptechnologies" class="instagram"><i class="bi bi-instagram"></i></a>
@@ -63,7 +62,7 @@
       </div>
     </div><!-- End Top Bar -->
 
-    
+
 
     <div class="branding d-flex align-items-cente">
 
@@ -78,18 +77,19 @@
           <ul>
             <li><a href="index.html">HOME</a></li>
             <li><a href="sms.html">SMS</a></li>
-            <li><a href="bueagle.html" class="active">BUEAGLE</a></li>
+            <li><a href="bueagle.html">BUEAGLE</a></li>
+
             <li class="dropdown">
               <a href="#">COMPANY</a>
               <ul class="dropdown-menu">
-                <li><a href="about-us.html">ABOUT-US</a></li>
+                <li><a href="about-us.html">ABOUT US</a></li>
                 <li><a href="management.html">MANAGEMENT</a></li>
                 <li><a href="gallery.html">GALLERY</a></li>
               </ul>
             </li>
 
 
-            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="sms.html" class="active">CONTACT</a></li>
           </ul>
 
         </nav>
@@ -98,81 +98,6 @@
     </div>
 
   </header>
-
-
-  <div id="enquiryModal">
-    <div class="modal-content">
-      <button class="close-btn" onclick="closeModal()">&times;</button>
-      <div class="enquiry-header">BOOK A DEMO</div>
-      <p class="enquiry-subtitle" style="text-align: center;">
-        Digitally revolutionize your school with Edship's all-in-one integrated platform fast, simple, and effective.
-      </p>
-
-      <form id="enquiryForm" class="enquiry-form">
-        <div class="enquiry-column">
-          <label>Name</label>
-          <input type="text" placeholder="Enter your name" required>
-        </div>
-        <div class="enquiry-column">
-          <label>Email</label>
-          <input type="email" placeholder="Enter your email" required>
-        </div>
-        <div class="enquiry-column">
-          <label>School Name</label>
-          <input type="text" placeholder="Enter school name" required>
-        </div>
-        <div class="enquiry-column">
-          <label>Type</label>
-          <select required>
-            <option value="">Select type</option>
-            <option value="School">School</option>
-            <option value="Tution Centre">Tution Centre</option>
-            <option value="College">College</option>
-            <option value="PlaySchool">PlaySchool</option>
-            <option value="Arabic College">Arabic College</option>
-            <option value="Group Organization">Group Organization</option>
-            <option value="University">University</option>
-          </select>
-        </div>
-        <div class="enquiry-column">
-          <label>Your role in the school</label>
-          <select required>
-            <option value="">Select role</option>
-            <option value="Principal">Principal</option>
-            <option value="Teacher">Teacher</option>
-            <option value="Student">Student</option>
-            <option value="Manager">Manager</option>
-
-          </select>
-        </div>
-        <div class="enquiry-column">
-          <label>Phone Number</label>
-          <div class="phone-input-wrapper">
-            <select required style="padding: 10px; border-radius: 5px; margin-right: 5px;">
-              <option value="+91" selected>🇮🇳 +91</option>
-              <option value="+1">🇺🇸 +1</option>
-              <option value="+44">🇬🇧 +44</option>
-              <option value="+61">🇦🇺 +61</option>
-              <option value="+971">🇦🇪 +971</option>
-              <option value="+81">🇯🇵 +81</option>
-              <option value="+49">🇩🇪 +49</option>
-              <option value="+33">🇫🇷 +33</option>
-              <option value="+880">🇧🇩 +880</option>
-              <!-- Add more country codes as needed -->
-            </select>
-            <input type="tel" placeholder="Enter mobile number" required style="flex: 1;">
-          </div>
-        </div>
-        <div class="enquiry-column-full">
-          <label>Message</label>
-          <textarea rows="4" placeholder="Your message" required></textarea>
-        </div>
-        <div class="enquiry-column-full">
-          <button type="submit" class="submit-button">SUBMIT</button>
-        </div>
-      </form>
-    </div>
-  </div>
 
   <!-- Contact Section -->
   <section id="contact" class="contact section">
@@ -225,7 +150,6 @@
 
           </div>
         </div>
-
 
         <!-- Contact Form Section -->
         <div class="col-lg-6">
@@ -395,7 +319,7 @@
   <script>
     document.querySelectorAll('.banner-carousel-item').forEach(item => {
       const bg = item.getAttribute('data-bg');
-      item.style.setProperty('--mobile-blur-bg', `url(${bg})`);
+      item.style.setProperty('--mobile-blur-bg', `url(${ bg })`);
     });
   </script>
   <!-- Vendor JS Files -->
@@ -416,8 +340,9 @@
   <script src="assets/plugins/shuffle/shuffle.min.js" defer></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  
   <script src="assets/js/conatct.js"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 
