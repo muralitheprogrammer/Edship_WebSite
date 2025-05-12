@@ -403,6 +403,15 @@ function closeModal() {
   document.getElementById('enquiryModal').style.display = 'none';
 }
 
+function openModal1(event) {
+  event.preventDefault();
+  document.getElementById('bookingPopup').style.display = 'block';
+}
+
+function closeModal1() {
+  document.getElementById('bookingPopup').style.display = 'none';
+}
+
 function handleFormSubmit(event) {
   event.preventDefault();
 
@@ -586,6 +595,120 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
 
-
+document.addEventListener('DOMContentLoaded', function() {
+  // Get DOM elements
+  const bookingPopup = document.getElementById('bookingPopup');
+  const thankYouPopup = document.getElementById('thankYouPopup');
+  const demoRequestForm = document.getElementById('demoRequestForm');
+  
+  // Open booking popup function
+  function openBookingPopup() {
+    bookingPopup.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  }
+  
+  // Close booking popup function
+  window.closeModal1 = function(event) {
+    if (event) {
+      event.preventDefault();
+    }
+    bookingPopup.style.display = 'none';
+    document.body.style.overflow = ''; // Enable background scrolling
+  };
+  
+  // Open thank you popup
+  function openThankYouPopup() {
+    thankYouPopup.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  
+  // Close thank you popup
+  window.closeThankYouModal = function(event) {
+    if (event) {
+      event.preventDefault();
+    }
+    thankYouPopup.style.display = 'none';
+    document.body.style.overflow = '';
+  };
+  
+  // Find any buttons that should open the booking popup
+  const bookNowButtons = document.querySelectorAll('.demo-request-link, [data-open-popup="booking"]');
+  bookNowButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      openBookingPopup();
+    });
+  });
+  
+  // Close popups when clicking outside
+  window.addEventListener('click', function(e) {
+    if (e.target === bookingPopup) {
+      closeModal1(e);
+    }
+    if (e.target === thankYouPopup) {
+      closeThankYouModal(e);
+    }
+  });
+  
+  // Form submission
+  if (demoRequestForm) {
+    demoRequestForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(demoRequestForm);
+      const formValues = {};
+      
+      formData.forEach((value, key) => {
+        formValues[key] = value;
+      });
+      
+      console.log('Form submitted:', formValues);
+      
+      // Here you would typically send the data to your server
+      // For example:
+      // fetch('/api/submit-demo-request', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify(formValues),
+      // })
+      // .then(response => response.json())
+      // .then(data => {
+      //   console.log('Success:', data);
+      //   closeModal1();
+      //   openThankYouPopup();
+      // })
+      // .catch((error) => {
+      //   console.error('Error:', error);
+      //   alert('There was an error submitting your request. Please try again.');
+      // });
+      
+      // For demo purposes, we'll just simulate a successful submission
+      setTimeout(() => {
+        closeModal1();
+        demoRequestForm.reset();
+        
+        // Show thank you popup
+        setTimeout(() => {
+          openThankYouPopup();
+        }, 300);
+      }, 1000);
+    });
+  }
+  
+  // Add escape key listener to close popups
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      if (bookingPopup.style.display === 'flex') {
+        closeModal1(e);
+      }
+      if (thankYouPopup.style.display === 'flex') {
+        closeThankYouModal(e);
+      }
+    }
+  });
+});
 
   
