@@ -896,6 +896,13 @@ div.product ul.tabs li a:before,
     gap: 0.25rem;
 }
 
+@media only screen and (max-width: 600px) {
+  .page-header__breadcrumbs{
+    display: none;
+  }
+}
+
+
 .breadcrumbs__link {
     color: #2d465e;
     text-decoration: none;

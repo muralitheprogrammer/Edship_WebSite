@@ -27,10 +27,10 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/sms.css" rel="stylesheet">
+ <link rel="stylesheet" href="assets/css/bueagle.css">
+ <link rel="stylesheet" href="assets/css/main.css">
 
   <link rel="stylesheet" href="assets/css/contact.css">
-  <link rel="stylesheet" href="assets/css/main.css">
   <!-- FontAwesome -->
   <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
   <!-- Animation -->
@@ -45,7 +45,62 @@
 
 <body class="index-page">
 
-  <header id="header" class="header sticky-top">
+  <!-- <header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:info@edship.in">info@edship.in</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91-6238506588</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="https://www.youtube.com/@edshiptechnologies"><i class="bi bi-youtube"></i></a>
+          <a href="https://www.facebook.com/edshiptechnologies" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/edshiptechnologies" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/edshiptechnologies" class="linkedin"><i
+              class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="branding d-flex align-items-cente">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+
+          <img src="assets/img/Edship_logo.png" alt="">
+
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="sms.html">SMS</a></li>
+            <li><a href="bueagle.html">BUEAGLE</a></li>
+
+            <li class="dropdown">
+              <a href="#">COMPANY</a>
+              <ul class="dropdown-menu">
+                <li><a href="about-us.html">ABOUT US</a></li>
+                <li><a href="management.html">MANAGEMENT</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+              </ul>
+            </li>
+
+
+            <li><a href="sms.html" class="active">CONTACT</a></li>
+          </ul>
+
+        </nav>
+      </div>
+
+    </div>
+
+  </header> -->
+
+ <header id="header" class="header sticky-top">
 
     <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
@@ -55,8 +110,7 @@
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
           <div class="book-now ms-4" onclick="document.getElementById('enquiryModal').style.display = 'block'">
-            <a href="#" class="book-now-btn">Book
-              A Demo</a>
+            <a href="#" class="book-now-btn">Book A Demo</a>
           </div>
           
           <a href="https://www.youtube.com/@edshiptechnologies"><i class="bi bi-youtube"></i></a>
@@ -87,7 +141,7 @@
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 
           <ul>
-            <li><a href="index.html" class="active">HOME</a></li>
+            <li><a href="index.html" >HOME</a></li>
             <li><a href="sms.html">SMS</a></li>
             <li><a href="bueagle.html">BUEAGLE</a></li>
 
@@ -100,7 +154,7 @@
               </ul>
             </li>
 
-            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="contact.html" class="active">CONTACT</a></li>
           </ul>
         </nav>
 
@@ -109,147 +163,222 @@
     </div>
 
   </header>
-
   <!-- Contact Section -->
-  <section id="contact" class="contact section">
+  <!-- Contact Section -->
+<section id="contact" class="contact section">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Get in Touch</h2>
+    <p>Feel free to reach out to us for any queries!</p>
+  </div>
 
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Get in Touch</h2>
-      <p>Feel free to reach out to us for any queries!</p>
-    </div><!-- End Section Title -->
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+      <!-- Contact Info -->
+      <div class="col-lg-6">
+        <div class="row gy-4">
+          <!-- Address -->
+          <div class="col-lg-12">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Address</h3>
+              <p>BB Arcade, Millumpadi Rd, Marottichuvadu, Kochi, Ernakulam</p>
+            </div>
+          </div>
 
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <div class="row gy-4">
-        <div class="col-lg-6">
-          <div class="row gy-4">
-            <!-- Address Info -->
-            <div class="col-lg-12">
-              <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
-                data-aos-delay="200">
-                <i class="bi bi-geo-alt"></i>
-                <h3>Address</h3>
-                <p>BB Arcade, Millumpadi Rd, Marottichuvadu, Kochi, Ernakulam
-                </p>
-              </div>
-            </div><!-- End Info Item -->
+          <!-- Phone -->
+          <div class="col-md-12">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone"></i>
+              <h3>Call Us</h3>
+              <p>+91-9946144333</p>
+            </div>
+          </div>
 
-            <!-- Call Us -->
-            <div class="col-md-12">
-              <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
-                data-aos-delay="300">
-                <i class="bi bi-telephone"></i>
-                <h3>Call Us</h3>
-                <p>+91-9946144333</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <!-- Email Us -->
-            <div class="col-md-12">
-              <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
-                data-aos-delay="400">
-                <i class="bi bi-envelope"></i>
-                <h3>Email Us</h3>
-                <p><b>For Enquiries:</b> info@edship.in</p>
-                <p><b>For Sales:</b> sales@edship.in</p>
-
-
-              </div>
-            </div><!-- End Info Item -->
-
-
-
+          <!-- Email -->
+          <div class="col-md-12">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope"></i>
+              <h3>Email Us</h3>
+              <p><strong>For Enquiries:</strong> info@edship.in</p>
+              <p><strong>For Sales:</strong> sales@edship.in</p>
+            </div>
           </div>
         </div>
-
-        <!-- Contact Form Section -->
-        <div class="col-lg-6">
-          <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
-            <div class="row gy-4">
-              <!-- First Name -->
-              <div class="col-md-6">
-                <input type="text" name="firstName" class="form-control" placeholder="Your First Name" required>
-              </div>
-
-              <!-- Last Name -->
-              <div class="col-md-6">
-                <input type="text" name="lastName" class="form-control" placeholder="Your Last Name" required>
-              </div>
-
-              <!-- Email -->
-              <div class="col-md-6">
-                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-              </div>
-
-              <!-- Phone Number -->
-              <div class="col-md-6">
-                <input type="tel" name="phone" class="form-control" placeholder="Your Phone Number" required>
-              </div>
-
-              <!--  -->
-              <div class="enquiry-row">
-                <div class="enquiry-group">
-                  <label for="school">Name of your School</label>
-                  <input type="text" id="school" name="school" placeholder="Enter school name" required>
-                </div>
-                <div class="enquiry-group">
-                  <label for="type">Type</label>
-                  <select id="type" name="type" required>
-                    <option value="" disabled selected>Select role</option>
-                    <option value="Tution Centre">Tution Centre</option>
-                    <option value="College">College</option>
-                    <option value="PlaySchool">PlaySchool</option>
-                    <option value="Arabic College">Arabic College</option>
-                    <option value="Group Organization">Group Organization</option>
-                    <option value="University">University</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-field half-width">
-                <div class="enquiry-group">
-                  <label for="role">Your role in the school</label>
-                  <select id="role" name="role" required>
-                    <option value="" disabled selected>Select role</option>
-                    <option value="principal">Principal</option>
-                    <option value="teacher">Teacher</option>
-                    <option value="admin">Administrator</option>
-                  </select>
-                </div>
-              </div>
-
-              <!-- Institute Name -->
-
-              <!-- Message -->
-              <div class="col-md-12">
-                <textarea class="form-control" name="message" rows="4" placeholder="Your Message" required></textarea>
-              </div>
-              <div class="col-md-12 text-center">
-                <!-- Error Message -->
-                <div class="error-message" style="color: red;"></div>
-
-                <!-- Success (Thank You) Message -->
-                <div class="sent-message" style="color: rgb(243, 245, 243); display: none;"></div>
-
-                <div id="thankYouPopup" class="thank-you-popup" style="display: none;">
-                  <p>Your submission has been received successfully.
-                    Our team will get back to you shortly.</p>
-                </div>
-
-                <button type="submit">SUBMIT</button>
-              </div>
-
-            </div>
-          </form>
-        </div><!-- End Contact Form -->
-
       </div>
 
+      <!-- Contact Form -->
+      <div class="col-lg-6">
+        <form id="enquiryContactForm" onsubmit="return false;">
+          <div class="row gy-4">
+            <!-- First Name -->
+            <div class="col-md-6">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Your First Name" required>
+            </div>
+
+            <!-- Last Name -->
+            <div class="col-md-6">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Your Last Name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="col-md-6">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+            </div>
+
+            <!-- Phone -->
+            <div class="col-md-6">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="Your Phone Number" required>
+            </div>
+
+            <!-- School and Type -->
+            <div class="enquiry-row">
+              <div class="enquiry-group">
+                <label for="school">Name of your School</label>
+                <input type="text" id="school" name="school" placeholder="Enter school name" required>
+              </div>
+              <div class="enquiry-group">
+                <label for="type">Type</label>
+                <select id="type" name="type" required>
+                  <option value="" disabled hidden>Select type</option>
+                  <option value="Tuition Centre">Tuition Centre</option>
+                  <option value="College">College</option>
+                  <option value="PlaySchool">PlaySchool</option>
+                  <option value="Arabic College">Arabic College</option>
+                  <option value="Group Organization">Group Organization</option>
+                  <option value="University">University</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Role -->
+            <div class="form-field half-width">
+              <div class="enquiry-group">
+                <label for="role">Your role in the school</label>
+                <select id="role" name="role" required>
+                  <option value="" disabled hidden>Select role</option>
+                  <option value="principal">Principal</option>
+                  <option value="teacher">Teacher</option>
+                  <option value="admin">Administrator</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="col-md-12">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+            </div>
+
+            <!-- Submission -->
+            <div class="col-md-12 text-center">
+              <div class="error-message" style="color: red;"></div>
+              <output role="status" aria-live="polite" class="sent-message" style="color: green; display: none;"></output>
+              <div id="thankYouPopup" class="thank-you-popup" style="display: none;">
+                <p>Your submission has been received successfully. Our team will get back to you shortly.</p>
+              </div>
+              <button type="button" class="submit-btn" onclick="submitContactForm()">SUBMIT</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
+</section>
 
-  </section><!-- End Contact Section -->
+<div id="enquiryModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <div class="enquiry-header">BOOK A DEMO</div>
+      <p class="enquiry-subtitle" style="text-align: center;">
+        Digitally revolutionize your school with Edship's all-in-one integrated platform fast, simple, and effective.
+      </p>
+
+      <form id="enquiryForm" class="enquiry-form" onsubmit="return false;">
+        <div class="enquiry-column">
+          <label>Name</label>
+          <input type="text" name="Name" placeholder="Enter your name" required>
+        </div>
+        <div class="enquiry-column">
+          <label>Email</label>
+          <input type="email" name="Email" placeholder="Enter your email" required>
+        </div>
+        <div class="enquiry-column">
+          <label>School Name</label>
+          <input type="text" name="SchoolName" placeholder="Enter school name" required>
+        </div>
+        <div class="enquiry-column">
+          <label>Type</label>
+          <select required name="type">
+            <option value="">Select type</option>
+            <option value="School">School</option>
+            <option value="Tution Centre">Tution Centre</option>
+            <option value="College">College</option>
+            <option value="PlaySchool">PlaySchool</option>
+            <option value="Arabic College">Arabic College</option>
+            <option value="Group Organization">Group Organization</option>
+            <option value="University">University</option>
+          </select>
+        </div>
+        <div class="enquiry-column">
+          <label>Your role in the school</label>
+          <select required name="role">
+            <option value="">Select role</option>
+            <option value="Principal">Principal</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Student">Student</option>
+            <option value="Manager">Manager</option>
+
+          </select>
+        </div>
+        <div class="enquiry-column">
+          <label>Phone Number</label>
+          <div class="phone-input-wrapper">
+            <select required style="padding: 10px; border-radius: 5px; margin-right: 5px;">
+              <option value="+91" selected>🇮🇳 +91</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+61">🇦🇺 +61</option>
+              <option value="+971">🇦🇪 +971</option>
+              <option value="+81">🇯🇵 +81</option>
+              <option value="+49">🇩🇪 +49</option>
+              <option value="+33">🇫🇷 +33</option>
+              <option value="+880">🇧🇩 +880</option>
+              <!-- Add more country codes as needed -->
+            </select>
+            <input type="tel" name="number" required placeholder="Enter mobile number"  style="flex: 1;">
+          </div>
+        </div>
+        <div class="enquiry-column-full">
+          <label>Message</label>
+          <textarea rows="4" name="message" placeholder="Your message"  required></textarea>
+        </div>
+        <div class="enquiry-column-full">
+          <button type="button" id="submit-button" class="submit-button" onclick="submitForm()">SUBMIT</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
 
 
+
+<div id="successModal" class="thankYouPopup">
+  <div class="thank-you-wrapper modal-content">
+    <div class="checkmark-circle">
+      <div class="background"></div>
+      <div class="checkmark draw"></div>
+    </div>
+    <h2 >Thank You!</h2>
+    <i class="bi bi-x-lg icon" onclick="close"></i>
+    <p>Your demo request has been submitted successfully. Our team will get back to you shortly.</p>
+    <button onclick="closeThankYouModal(event)" class="thank-you-button">Continue</button>
+  </div>
+</div>
 
   <footer id="footer" class="footer">
 

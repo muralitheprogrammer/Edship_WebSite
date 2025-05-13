@@ -712,6 +712,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
   
-
-
-

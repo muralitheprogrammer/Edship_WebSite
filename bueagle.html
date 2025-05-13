@@ -41,8 +41,7 @@
 
 </head>
 
-<body class="index-page">
-  <header id="header" class="header sticky-top">
+<header id="header" class="header sticky-top">
 
     <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
@@ -52,8 +51,7 @@
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
           <div class="book-now ms-4" onclick="document.getElementById('enquiryModal').style.display = 'block'">
-            <a href="#" class="book-now-btn">Book
-              A Demo</a>
+            <a href="#" class="book-now-btn">Book A Demo</a>
           </div>
           
           <a href="https://www.youtube.com/@edshiptechnologies"><i class="bi bi-youtube"></i></a>
@@ -106,7 +104,6 @@
     </div>
 
   </header>
-
   <main class="main">
 
     <section id="hero" class="hero section light-background">
@@ -340,22 +337,22 @@
         Digitally revolutionize your school with Edship's all-in-one integrated platform fast, simple, and effective.
       </p>
 
-      <form id="enquiryForm" class="enquiry-form">
+      <form id="enquiryForm" class="enquiry-form" onsubmit="return false;">
         <div class="enquiry-column">
           <label>Name</label>
-          <input type="text" placeholder="Enter your name" required>
+          <input type="text" name="Name" placeholder="Enter your name" required>
         </div>
         <div class="enquiry-column">
           <label>Email</label>
-          <input type="email" placeholder="Enter your email" required>
+          <input type="email" name="Email" placeholder="Enter your email" required>
         </div>
         <div class="enquiry-column">
           <label>School Name</label>
-          <input type="text" placeholder="Enter school name" required>
+          <input type="text" name="SchoolName" placeholder="Enter school name" required>
         </div>
         <div class="enquiry-column">
           <label>Type</label>
-          <select required>
+          <select required name="type">
             <option value="">Select type</option>
             <option value="School">School</option>
             <option value="Tution Centre">Tution Centre</option>
@@ -368,7 +365,7 @@
         </div>
         <div class="enquiry-column">
           <label>Your role in the school</label>
-          <select required>
+          <select required name="role">
             <option value="">Select role</option>
             <option value="Principal">Principal</option>
             <option value="Teacher">Teacher</option>
@@ -392,19 +389,48 @@
               <option value="+880">🇧🇩 +880</option>
               <!-- Add more country codes as needed -->
             </select>
-            <input type="tel" placeholder="Enter mobile number" required style="flex: 1;">
+            <input type="tel" name="number" required placeholder="Enter mobile number"  style="flex: 1;">
           </div>
         </div>
         <div class="enquiry-column-full">
           <label>Message</label>
-          <textarea rows="4" placeholder="Your message" required></textarea>
+          <textarea rows="4" name="message" placeholder="Your message"  required></textarea>
         </div>
         <div class="enquiry-column-full">
-          <button type="submit" class="submit-button">SUBMIT</button>
+          <button type="button" id="submit-button" class="submit-button" onclick="submitForm()">SUBMIT</button>
         </div>
       </form>
+
     </div>
   </div>
+
+
+
+<!-- <div id="successModal" class="thankYouPopup">
+  <div class="thank-you-wrapper modal-content">
+    <button class="popup-close-icon" onclick="closeThankYouModal(event)">&times;</button>
+    <div class="checkmark-circle">
+      <div class="background"></div>
+      <div class="checkmark draw"></div>
+    </div>
+    <h2>Thank You!</h2>
+    <p>Your demo request has been submitted successfully. Our team will get back to you shortly.</p>
+    <button onclick="closeThankYouModal(event)" class="thank-you-button">Continue</button>
+  </div>
+</div> -->
+
+<div id="successModal" class="thankYouPopup">
+  <div class="thank-you-wrapper modal-content">
+    <div class="checkmark-circle">
+      <div class="background"></div>
+      <div class="checkmark draw"></div>
+    </div>
+    <h2 >Thank You!</h2>
+    <i class="bi bi-x-lg icon" onclick="close"></i>
+    <p>Your demo request has been submitted successfully. Our team will get back to you shortly.</p>
+    <button onclick="closeThankYouModal(event)" class="thank-you-button">Continue</button>
+  </div>
+</div>
 
     <footer id="footer" class="footer">
 

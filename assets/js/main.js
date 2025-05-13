@@ -575,6 +575,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (edshipForm) {
         edshipForm.addEventListener('submit', function(e) {
             e.preventDefault();
+
+            console.log('submitted from edshipform')
             
             // Get form values
             const name = document.getElementById('edshipName').value;
@@ -658,7 +660,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
   const modal = document.getElementById("enquiryModal");
   const openBtn = document.getElementById("bookNowBtn");
   const form = document.getElementById("enquiryForm");
@@ -682,7 +683,30 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   // Handle form submission
- 
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Optional: validate inputs or send data here
+
+    // Replace form content with thank you message
+    form.innerHTML = `
+      <div style="text-align: center; padding: 50px;">
+        <h2 style="color: green;">Thank you!</h2>
+        <p>Your submission has been received successfully.
+		Our team will get back to you shortly.</p>
+      </div>
+    `;
+
+    // Auto-close after 3 seconds
+    setTimeout(() => {
+      closeModal();
+
+      // Reset form after closing
+      setTimeout(() => {
+        location.reload(); // Reload to reset form
+      }, 500);
+    }, 3000);
+  });
 
 /**
  * Thank You Popup Functionality
@@ -802,3 +826,77 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+//  const enquiryForm = document.getElementById('enquiryForm');
+ 
+  
+
+  function closeModal() {
+     const enquiryModal = document.getElementById('enquiryModal');
+    enquiryModal.style.display = 'none';
+  }
+
+  function showSuccessModal() {
+    const successModal = document.getElementById('successModal');
+    successModal.style.display = 'block';
+    setTimeout(() => {
+      successModal.style.display = 'none';
+    }, 4000);
+  }
+
+//   enquiryForm.addEventListener('submit', function(event) {
+//     event.preventDefault();
+//     console.log("HELLLOOWOO")
+
+//     const formData = new FormData(enquiryForm);
+//     const data = {};
+
+//     formData.forEach((value, key) => {
+//       data[key] = value;
+//     });
+
+//     // Manually extract phone number and country code
+//     const phoneWrapper = enquiryForm.querySelector('.phone-input-wrapper');
+//     const countryCode = phoneWrapper.querySelector('select').value;
+//     const phone = phoneWrapper.querySelector('input[type="tel"]').value;
+
+//     data['Phone'] = `${countryCode} ${phone}`;
+
+//     console.log("Form Data Submitted:", data);
+
+//     closeModal();         // Close the enquiry modal
+//     showSuccessModal();   // Show success message
+//   });
+
+function submitForm(){
+  const form = document.getElementById('enquiryForm');
+
+  if (!form.checkValidity()) {
+    form.reportValidity(); // shows built-in validation messages
+    return; // stop execution if invalid
+  }
+
+  const formData = new FormData(form);
+  const data = {};
+
+  // Collect data from inputs with 'name' attribute
+  formData.forEach((value, key) => {
+    data[key] = value;
+  });
+
+  // Get phone number and country code manually
+  const phoneWrapper = form.querySelector('.phone-input-wrapper');
+  const countryCode = phoneWrapper.querySelector('select').value;
+  const phone = phoneWrapper.querySelector('input[type="tel"]').value;
+
+  data['Phone'] = `${countryCode} ${phone}`;
+
+  console.log('Submitted Data:', data);
+  console.log('submitteed');
+
+  form.reset()
+
+  if(data){
+    closeModal();
+    showSuccessModal();
+  }
+}

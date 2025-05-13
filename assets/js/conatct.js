@@ -100,3 +100,36 @@ document.addEventListener('DOMContentLoaded', function() {
       aos_init();
     });
   });
+
+  function submitContactForm(){
+    const form = document.getElementById('enquiryContactForm');
+
+    if (!form.checkValidity()) {
+      form.reportValidity(); // shows built-in validation messages
+      return; // stop execution if invalid
+    }
+
+    const formData = new FormData(form);
+  const data = {};
+
+  // Collect data from inputs with 'name' attribute
+  formData.forEach((value, key) => {
+    data[key] = value;
+  });
+
+  // Get phone number and country code manually
+  // const phoneWrapper = form.querySelector('.phone-input-wrapper');
+  // // const countryCode = phoneWrapper.querySelector('select').value;
+  // const phone = phoneWrapper.querySelector('input[type="tel"]').value;
+
+  // data['Phone'] = `${countryCode} ${phone}`;
+
+  console.log('Submitted Data:', data);
+  console.log('submitteed');
+
+  form.reset()
+
+  if(data){
+    showSuccessModal();
+  }
+}

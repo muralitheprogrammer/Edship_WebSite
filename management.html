@@ -73,7 +73,7 @@
 
   <!-- Header Section -->
   <header id="header" class="header sticky-top">
-    <!-- Top Bar -->
+
     <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
@@ -81,10 +81,10 @@
           <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91-6238506588</span></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
-           <div class="book-now ms-4">
-            <a href="#" class="book-now-btn" data-bs-toggle="modal" data-bs-target="#bookingModal" id="bookNowBtn">Book
-              A Demo</a>
+          <div class="book-now ms-4" onclick="document.getElementById('enquiryModal').style.display = 'block'">
+            <a href="#" class="book-now-btn">Book A Demo</a>
           </div>
+          
           <a href="https://www.youtube.com/@edshiptechnologies"><i class="bi bi-youtube"></i></a>
           <a href="https://www.facebook.com/edshiptechnologies" class="facebook"><i class="bi bi-facebook"></i></a>
           <a href="https://www.instagram.com/edshiptechnologies" class="instagram"><i class="bi bi-instagram"></i></a>
@@ -94,7 +94,6 @@
       </div>
     </div><!-- End Top Bar -->
 
-    <!-- Navigation -->
     <div class="branding d-flex align-items-cente">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
@@ -104,30 +103,37 @@
 
         </a>
 
+        <div class="book-now ms-4" onclick="document.getElementById('enquiryModal').style.display = 'block'">
+          <a href="#" class="book-now-btn2">Book
+            A Demo</a>
+        </div>
+
         <nav id="navmenu" class="navmenu">
+          <!-- Mobile toggle icon (should be outside the list) -->
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
           <ul>
             <li><a href="index.html">HOME</a></li>
             <li><a href="sms.html">SMS</a></li>
             <li><a href="bueagle.html">BUEAGLE</a></li>
 
             <li class="dropdown">
-              <a href="#" class="active">COMPANY</a>
+              <a href="#"  class="active">COMPANY</a>
               <ul class="dropdown-menu">
                 <li><a href="about-us.html">ABOUT-US</a></li>
-                <li><a href="management.html" >MANAGEMENT</a></li>
+                <li><a href="management.html">MANAGEMENT</a></li>
                 <li><a href="gallery.html">GALLERY</a></li>
               </ul>
             </li>
 
-
             <li><a href="contact.html">CONTACT</a></li>
           </ul>
-
         </nav>
 
       </div>
 
     </div>
+
   </header>
 
   <!-- Main Content -->
@@ -243,7 +249,7 @@
   </div>
 
 
-<div id="enquiryModal">
+ <div id="enquiryModal">
     <div class="modal-content">
       <button class="close-btn" onclick="closeModal()">&times;</button>
       <div class="enquiry-header">BOOK A DEMO</div>
@@ -251,22 +257,22 @@
         Digitally revolutionize your school with Edship's all-in-one integrated platform fast, simple, and effective.
       </p>
 
-      <form id="enquiryForm" class="enquiry-form">
+      <form id="enquiryForm" class="enquiry-form" onsubmit="return false;">
         <div class="enquiry-column">
           <label>Name</label>
-          <input type="text" placeholder="Enter your name" required>
+          <input type="text" name="Name" placeholder="Enter your name" required>
         </div>
         <div class="enquiry-column">
           <label>Email</label>
-          <input type="email" placeholder="Enter your email" required>
+          <input type="email" name="Email" placeholder="Enter your email" required>
         </div>
         <div class="enquiry-column">
           <label>School Name</label>
-          <input type="text" placeholder="Enter school name" required>
+          <input type="text" name="SchoolName" placeholder="Enter school name" required>
         </div>
         <div class="enquiry-column">
           <label>Type</label>
-          <select required>
+          <select required name="type">
             <option value="">Select type</option>
             <option value="School">School</option>
             <option value="Tution Centre">Tution Centre</option>
@@ -279,7 +285,7 @@
         </div>
         <div class="enquiry-column">
           <label>Your role in the school</label>
-          <select required>
+          <select required name="role">
             <option value="">Select role</option>
             <option value="Principal">Principal</option>
             <option value="Teacher">Teacher</option>
@@ -303,19 +309,36 @@
               <option value="+880">🇧🇩 +880</option>
               <!-- Add more country codes as needed -->
             </select>
-            <input type="tel" placeholder="Enter mobile number" required style="flex: 1;">
+            <input type="tel" name="number" required placeholder="Enter mobile number"  style="flex: 1;">
           </div>
         </div>
         <div class="enquiry-column-full">
           <label>Message</label>
-          <textarea rows="4" placeholder="Your message" required></textarea>
+          <textarea rows="4" name="message" placeholder="Your message"  required></textarea>
         </div>
         <div class="enquiry-column-full">
-          <button type="submit" class="submit-button">SUBMIT</button>
+          <button type="button" id="submit-button" class="submit-button" onclick="submitForm()">SUBMIT</button>
         </div>
       </form>
+
     </div>
   </div>
+
+
+
+<div id="successModal" class="thankYouPopup">
+  <div class="thank-you-wrapper modal-content">
+    <button class="popup-close-icon" onclick="closeThankYouModal(event)">&times;</button>
+    <div class="checkmark-circle">
+      <div class="background"></div>
+      <div class="checkmark draw"></div>
+    </div>
+    <h2>Thank You!</h2>
+    <p>Your demo request has been submitted successfully. Our team will get back to you shortly.</p>
+    <button onclick="closeThankYouModal(event)" class="thank-you-button">Continue</button>
+  </div>
+</div>
+
 
   <!-- Footer Section -->
   <footer id="footer" class="footer">
