@@ -133,3 +133,18 @@ document.addEventListener('DOMContentLoaded', function() {
     showSuccessModal();
   }
 }
+
+
+const phoneInputField = document.querySelector("#phone");
+
+if (phoneInputField) {
+  const iti = window.intlTelInput(phoneInputField, {
+    initialCountry: "in", // Set default country
+    preferredCountries: ["in", "us", "gb"],
+    separateDialCode: true,
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.min.js"
+  });
+}
+
+
+

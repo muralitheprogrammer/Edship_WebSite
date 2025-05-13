@@ -4470,8 +4470,22 @@ textarea {
   padding: 20px 0;
 }
 
-@media  screen and (min-width: 600px) {
-  .book-now-btn-mb{
-    display: none;
+/* Default: hide the button on large screens */
+.book-now-btn-mb {
+  display: none;
+}
+
+/* On small screens (mobile): show the button */
+@media screen and (max-width: 600px) {
+  .book-now-btn-mb {
+    display: block; 
+     background-color: #ffc107; /* Bootstrap warning yellow */
+  color: white;
+  padding: 6px 3PX;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
   }
 }
