@@ -38,6 +38,7 @@
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -62,59 +63,23 @@
 
   <!-- Colorbox -->
   <link rel="stylesheet" href="assets/plugins/colorbox/colorbox.css">
+<script>
+  function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
 </head>
 
 <body class="index-page">
-  <!-- <header id="header" class="header sticky-top">
-    <div class="topbar d-flex align-items-center">
-      <div class="container d-flex justify-content-center justify-content-md-between align-items-center">
-        <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center">
-            <a href="mailto:info@edship.in">info@edship.in</a>
-          </i>
-          <i class="bi bi-phone d-flex align-items-center ms-4">
-            <span>+91-6238506588</span>
-          </i>
-        </div>
-        <div class="social-links d-none d-md-flex align-items-center ms-4">
-          <div class="book-now ms-4">
-            <a href="#" class="book-now-btn" data-bs-toggle="modal" data-bs-target="#bookingModal" id="bookNowBtn">Book
-              A Demo</a>
-          </div>
-          <a href="https://www.youtube.com/@edshiptechnologies"><i class="bi bi-youtube"></i></a>
-          <a href="https://www.facebook.com/edshiptechnologies" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/edshiptechnologies" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/edshiptechnologies" class="linkedin"><i
-              class="bi bi-linkedin"></i></a>
-        </div>
+  
 
-      </div>
-    </div>
-    <div class="branding d-flex align-items-center position-relative">
-      <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
-          <img src="assets/img/Edship_logo.png" alt="">
-        </a>
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li><a href="index.html" class="active">HOME</a></li>
-            <li><a href="sms.html">SMS</a></li>
-            <li><a href="bueagle.html">BUEAGLE</a></li>
-            <li class="dropdown">
-              <a href="#">COMPANY</a>
-              <ul class="dropdown-menu">
-                <li><a href="about-us.html">ABOUT-US</a></li>
-                <li><a href="management.html">MANAGEMENT</a></li>
-                <li><a href="gallery.html">GALLERY</a></li>
-              </ul>
-            </li>
-            <li><a href="contact.html">CONTACT</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-
-  </header> -->
+  
 
 
   <header id="header" class="header sticky-top">
@@ -126,6 +91,11 @@
           <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91-6238506588</span></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
+          <div class="book-now ms-4" onclick="document.getElementById('enquiryModal').style.display = 'block'">
+            <a href="#" class="book-now-btn">Book
+              A Demo</a>
+          </div>
+          
           <a href="https://www.youtube.com/@edshiptechnologies"><i class="bi bi-youtube"></i></a>
           <a href="https://www.facebook.com/edshiptechnologies" class="facebook"><i class="bi bi-facebook"></i></a>
           <a href="https://www.instagram.com/edshiptechnologies" class="instagram"><i class="bi bi-instagram"></i></a>
@@ -143,6 +113,11 @@
           <img src="assets/img/Edship_logo.png" alt="">
 
         </a>
+
+        <div class="book-now ms-4" onclick="document.getElementById('enquiryModal').style.display = 'block'">
+          <a href="#" class="book-now-btn2">Book
+            A Demo</a>
+        </div>
 
         <nav id="navmenu" class="navmenu">
           <!-- Mobile toggle icon (should be outside the list) -->
@@ -885,6 +860,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/bueagle.js"></script>
 </body>
 
 </html>

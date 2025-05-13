@@ -74,7 +74,7 @@
 
   <!-- Header Section -->
   <header id="header" class="header sticky-top">
-    <!-- Top Bar -->
+
     <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
@@ -82,10 +82,11 @@
           <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91-6238506588</span></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
-          <div class="book-now ms-4">
-            <a href="#" class="book-now-btn" data-bs-toggle="modal" data-bs-target="#bookingModal" id="bookNowBtn">Book
+          <div class="book-now ms-4" onclick="document.getElementById('enquiryModal').style.display = 'block'">
+            <a href="#" class="book-now-btn">Book
               A Demo</a>
           </div>
+          
           <a href="https://www.youtube.com/@edshiptechnologies"><i class="bi bi-youtube"></i></a>
           <a href="https://www.facebook.com/edshiptechnologies" class="facebook"><i class="bi bi-facebook"></i></a>
           <a href="https://www.instagram.com/edshiptechnologies" class="instagram"><i class="bi bi-instagram"></i></a>
@@ -95,36 +96,47 @@
       </div>
     </div><!-- End Top Bar -->
 
-    <!-- Navigation -->
-    <div class="branding d-flex align-items-center">
+    <div class="branding d-flex align-items-cente">
+
       <div class="container position-relative d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
-          <img src="assets/img/Edship_logo.png" alt="Edship Logo">
+
+          <img src="assets/img/Edship_logo.png" alt="">
+
         </a>
 
+        <div class="book-now ms-4" onclick="document.getElementById('enquiryModal').style.display = 'block'">
+          <a href="#" class="book-now-btn2">Book
+            A Demo</a>
+        </div>
+
         <nav id="navmenu" class="navmenu">
+          <!-- Mobile toggle icon (should be outside the list) -->
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" class="active">HOME</a></li>
             <li><a href="sms.html">SMS</a></li>
-            <li><a href="bueagle.html" >BUEAGLE</a></li>
+            <li><a href="bueagle.html">BUEAGLE</a></li>
+
             <li class="dropdown">
-              <a href="#" class="active">COMPANY</a>
+              <a href="#">COMPANY</a>
               <ul class="dropdown-menu">
-                <li><a href="about-us.html" class="active">ABOUT-US</a></li>
+                <li><a href="about-us.html">ABOUT-US</a></li>
                 <li><a href="management.html">MANAGEMENT</a></li>
                 <li><a href="gallery.html">GALLERY</a></li>
               </ul>
             </li>
 
-
             <li><a href="contact.html">CONTACT</a></li>
           </ul>
-
         </nav>
-      </div>
-    </div>
-  </header>
 
+      </div>
+
+    </div>
+
+  </header>
 
   <!-- Main Content -->
   <div class="page">

@@ -682,30 +682,7 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   // Handle form submission
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    // Optional: validate inputs or send data here
-
-    // Replace form content with thank you message
-    form.innerHTML = `
-      <div style="text-align: center; padding: 50px;">
-        <h2 style="color: green;">Thank you!</h2>
-        <p>Your submission has been received successfully.
-		Our team will get back to you shortly.</p>
-      </div>
-    `;
-
-    // Auto-close after 3 seconds
-    setTimeout(() => {
-      closeModal();
-
-      // Reset form after closing
-      setTimeout(() => {
-        location.reload(); // Reload to reset form
-      }, 500);
-    }, 3000);
-  });
+ 
 
 /**
  * Thank You Popup Functionality

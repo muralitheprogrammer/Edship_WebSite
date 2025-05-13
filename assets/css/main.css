@@ -184,12 +184,16 @@ h6 {
   visibility: hidden;
   overflow: hidden;
 } */
-
+.fa-bars{
+  display: none !important;
+}
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Navmenu - Desktop */
 @media (min-width: 1200px) {
+
+  
   .navmenu {
     padding: 0;
   }
@@ -295,6 +299,30 @@ h6 {
   }
 }
 
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
 /* Navmenu - Mobile */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
@@ -305,6 +333,16 @@ h6 {
     cursor: pointer;
     transition: color 0.3s;
   }
+
+  /* .bi ::before{
+    display: none;
+  } */
+
+  /* .bi-x::before {
+    content: none !important;
+  } */
+
+  
 
   .navmenu {
     padding: 0;
@@ -993,6 +1031,12 @@ section,
 
 }
 
+@media only screen and (min-width: 992px) {
+  .book-now-btn2{
+    display: none !important;
+  }
+}
+
 /* Tablet screens (below 991px) */
 @media (max-width: 991px) {
   .responsive-text {
@@ -1448,6 +1492,7 @@ section,
     width: fit-content;
     margin: 0 auto;
   }
+
 }
 
 .about .image-wrapper .experience-badge h3 {
@@ -2597,6 +2642,8 @@ section,
     gap: 20px;
   }
 
+  
+
   .eco-column {
     flex: 0 0 calc(33% - 15px);
   }
@@ -3511,6 +3558,7 @@ textarea {
   .enquiry-header {
     font-size: 18px;
     padding: 10px;
+    margin-top: 20px;
   }
   
   .phone-input-wrapper {
@@ -3734,7 +3782,16 @@ textarea {
   }
 }
 
-
+.book-now-btn2 {
+  background-color: #ffc107;
+  color: white;
+  padding: 4px 4px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
 
 .book-now-btn {
   background-color: #ffc107; /* Bootstrap warning yellow */
@@ -3759,3 +3816,27 @@ textarea {
 
 
   /* Toggle button styling */
+
+
+  .thank-you-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.thank-you-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+
