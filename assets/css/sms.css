@@ -3323,6 +3323,7 @@ input:focus, select:focus, textarea:focus {
   border: 1px solid #ccc;
   border-radius: 6px;
   outline: none;
+  color: #555;
 }
 
 .enquiry-group textarea {
