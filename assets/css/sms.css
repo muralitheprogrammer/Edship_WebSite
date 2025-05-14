@@ -4022,6 +4022,7 @@ textarea {
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 14px;
+  color: #555;
 }
 
 .demo-form input:focus,
