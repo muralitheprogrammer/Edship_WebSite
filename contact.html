@@ -110,7 +110,7 @@
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
           <div class="book-now ms-4" onclick="document.getElementById('enquiryModal').style.display = 'block'">
-            <a href="#" class="book-now-btn" style="color: #1aa3ab;">Book A Demo</a>
+            <a href="#" class="book-now-btn" style="color: #1aa;">Book A Demo</a>
           </div>
           
           <a href="https://www.youtube.com/@edshiptechnologies"><i class="bi bi-youtube"></i></a>
@@ -132,7 +132,7 @@
         </a>
 
         <div class="book-now ms-4" onclick="document.getElementById('enquiryModal').style.display = 'block'">
-          <a href="#" class="book-now-btn2" style="color: #1aa3ab;">Book
+          <a href="#" class="book-now-btn2">Book
             A Demo</a>
         </div>
 
@@ -154,7 +154,7 @@
               </ul>
             </li>
 
-            <li><a href="contact.html"class="active">CONTACT</a></li>
+            <li><a href="contact.html" class="active">CONTACT</a></li>
           </ul>
         </nav>
 
@@ -191,7 +191,7 @@
             <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
               <i class="bi bi-telephone"></i>
               <h3>Call Us</h3>
-              <p>+91-6238506588</p>
+              <p>+91-9946144333</p>
             </div>
           </div>
 
@@ -244,7 +244,7 @@
               <div class="enquiry-group">
                 <label for="type">Type</label>
                 <select id="type" name="type" required>
-                  <option value="">Select type</option>
+                  <option value="" disabled hidden>Select type</option>
                   <option value="Tuition Centre">Tuition Centre</option>
                   <option value="College">College</option>
                   <option value="PlaySchool">PlaySchool</option>
@@ -260,13 +260,11 @@
               <div class="enquiry-group">
                 <label for="role">Your role in the school</label>
                 <select id="role" name="role" required>
-                  <option value="">Select role</option>
+                  <option value="" disabled hidden>Select role</option>
                   <option value="principal">Principal</option>
                   <option value="teacher">Teacher</option>
-                  <option value="Manger">Manger</option>
-                  <option value="Well-wisher">Well-wisher</option>
-                  <option value="Alumni">Alumni</option>
-                  
+                  <option value="admin">Administrator</option>
+                  <option value="Student">Student</option>
                 </select>
               </div>
             </div>
@@ -372,12 +370,12 @@
 
 <div id="successModal" class="thankYouPopup">
   <div class="thank-you-wrapper modal-content">
+    <button class="popup-close-icon" onclick="closeThankYouModal(event)">&times;</button>
     <div class="checkmark-circle">
       <div class="background"></div>
       <div class="checkmark draw"></div>
     </div>
-    <h2 >Thank You!</h2>
-    <i class="bi bi-x-lg icon" onclick="close"></i>
+    <h2>Thank You!</h2>
     <p>Your demo request has been submitted successfully. Our team will get back to you shortly.</p>
     <button onclick="closeThankYouModal(event)" class="thank-you-button">Continue</button>
   </div>
@@ -485,8 +483,7 @@
   <!-- Main JS File -->
   
   <script src="assets/js/conatct.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/bueagle.js"></script>
+  <!-- <script src="assets/js/main.js"></script> -->
 
 </body>
 

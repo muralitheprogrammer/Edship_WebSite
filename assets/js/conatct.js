@@ -101,6 +101,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  function showSuccessModal() {
+    const successModal = document.getElementById('successModal');
+    successModal.style.display = 'block';
+    setTimeout(() => {
+      successModal.style.display = 'none';
+    }, 4000);
+  }
+
   function submitContactForm(){
     const form = document.getElementById('enquiryContactForm');
 
@@ -108,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
       form.reportValidity(); // shows built-in validation messages
       return; // stop execution if invalid
     }
-
+    
     const formData = new FormData(form);
   const data = {};
 
@@ -132,19 +140,63 @@ document.addEventListener('DOMContentLoaded', function() {
   if(data){
     showSuccessModal();
   }
+
+  
 }
 
+function closeModal() {
+     const enquiryModal = document.getElementById('enquiryModal');
+    enquiryModal.style.display = 'none';
+  }
 
-const phoneInputField = document.querySelector("#phone");
+  function showSuccessModal() {
+    const successModal = document.getElementById('successModal');
+    successModal.style.display = 'block';
+    setTimeout(() => {
+      successModal.style.display = 'none';
+    }, 4000);
+  }
 
-if (phoneInputField) {
-  const iti = window.intlTelInput(phoneInputField, {
-    initialCountry: "in", // Set default country
-    preferredCountries: ["in", "us", "gb"],
-    separateDialCode: true,
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.min.js"
+function submitForm(){
+  const form = document.getElementById('enquiryForm');
+
+  if (!form.checkValidity()) {
+    form.reportValidity(); // shows built-in validation messages
+    return; // stop execution if invalid
+  }
+
+  const formData = new FormData(form);
+  const data = {};
+
+  // Collect data from inputs with 'name' attribute
+  formData.forEach((value, key) => {
+    data[key] = value;
   });
+
+  // Get phone number and country code manually
+  const phoneWrapper = form.querySelector('.phone-input-wrapper');
+  const countryCode = phoneWrapper.querySelector('select').value;
+  const phone = phoneWrapper.querySelector('input[type="tel"]').value;
+
+  data['Phone'] = `${countryCode} ${phone}`;
+
+  console.log('Submitted Data:', data);
+  console.log('submitteed');
+
+  form.reset()
+
+  if(data){
+    closeModal();
+    showSuccessModal();
+  }
 }
 
 
 
+
+// 
+
+
+
+
+  
