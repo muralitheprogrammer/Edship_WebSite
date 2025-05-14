@@ -4029,7 +4029,7 @@ textarea {
 .demo-form select:focus,
 .demo-form textarea:focus {
   outline: none;
-  border-color: #3498db;
+  border-color: black;
 }
 
 /* Phone Input Container */
