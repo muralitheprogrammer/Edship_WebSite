@@ -4093,7 +4093,7 @@ textarea {
   position: relative;
   margin: auto;
   box-sizing: border-box;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 .popup-close-icon {
