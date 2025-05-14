@@ -3469,6 +3469,7 @@ input, select, textarea {
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
+  color: #555;
 }
 
 textarea {

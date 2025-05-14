@@ -73,6 +73,16 @@
   }
 }
 </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css" />
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- intlTelInput JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+<!-- utilsScript (optional, but useful for formatting/validation) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
 
 </head>
 
@@ -781,23 +791,11 @@
           </select>
         </div>
         <div class="enquiry-column">
-          <label>Phone Number</label>
-          <div class="phone-input-wrapper">
-            <select required style="padding: 10px; border-radius: 5px; margin-right: 5px;">
-              <option value="+91" selected>🇮🇳 +91</option>
-              <option value="+1">🇺🇸 +1</option>
-              <option value="+44">🇬🇧 +44</option>
-              <option value="+61">🇦🇺 +61</option>
-              <option value="+971">🇦🇪 +971</option>
-              <option value="+81">🇯🇵 +81</option>
-              <option value="+49">🇩🇪 +49</option>
-              <option value="+33">🇫🇷 +33</option>
-              <option value="+880">🇧🇩 +880</option>
-              <!-- Add more country codes as needed -->
-            </select>
-            <input type="tel" name="number" required placeholder="Enter mobile number"  style="flex: 1;">
-          </div>
-        </div>
+  <label>Phone Number</label>
+  <div class="phone-input-wrapper">
+    <input type="text" id="mobile_code" class="form-control" placeholder="Phone Number" name="name">
+  </div>
+</div>
         <div class="enquiry-column-full">
           <label>Message</label>
           <textarea rows="4" name="message" placeholder="Your message"  required></textarea>
@@ -901,6 +899,19 @@
       const bg = item.getAttribute('data-bg');
       item.style.setProperty('--mobile-blur-bg', `url(${bg})`);
     });
+  </script>
+  <script>
+    let iti; // store reference globally so you can reuse it
+
+document.addEventListener('DOMContentLoaded', function () {
+  const input = document.querySelector("#mobile_code");
+
+  iti = window.intlTelInput(input, {
+    initialCountry: "in",
+    separateDialCode: true,
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+  });
+});
   </script>
 
   <!-- Vendor JS Files -->
