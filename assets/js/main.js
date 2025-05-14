@@ -867,50 +867,36 @@ document.addEventListener('DOMContentLoaded', function() {
 //     showSuccessModal();   // Show success message
 //   });
 
-function submitForm() {
-  console.log('Hi Coming')
+function submitForm(){
   const form = document.getElementById('enquiryForm');
-console.log('Hi Coming1')
-  try {
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
 
-    const formData = new FormData(form);
-    const data = {};
+  if (!form.checkValidity()) {
+    form.reportValidity(); // shows built-in validation messages
+    return; // stop execution if invalid
+  }
 
-    formData.forEach((value, key) => {
-      data[key] = value;
-    });
+  const formData = new FormData(form);
+  const data = {};
 
-    const input = document.querySelector("#mobile_code");
+  // Collect data from inputs with 'name' attribute
+  formData.forEach((value, key) => {
+    data[key] = value;
+  });
 
-    if (!iti) {
-      throw new Error("intlTelInput is not initialized.");
-    }
+  // Get phone number and country code manually
+  const phoneWrapper = form.querySelector('.phone-input-wrapper');
+  const countryCode = phoneWrapper.querySelector('select').value;
+  const phone = phoneWrapper.querySelector('input[type="tel"]').value;
 
-    const fullPhoneNumber = iti.getNumber();
-    data['Phone'] = fullPhoneNumber;
+  data['Phone'] = `${countryCode} ${phone}`;
 
-    console.log("Full Phone Number:", fullPhoneNumber);
-    console.log("Submitted Data:", data);
+  console.log('Submitted Data:', data);
+  console.log('submitteed');
 
-    form.reset();
+  form.reset()
 
-    if (data) {
-      closeModal();
-      showSuccessModal();
-    }
-
-  } catch (error) {
-    console.log("Form submission error:", error.message);
-    alert("An error occurred during form submission. Please try again.");
+  if(data){
+    closeModal();
+    showSuccessModal();
   }
 }
-
-
-
-
-
-
