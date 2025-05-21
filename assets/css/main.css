@@ -3481,7 +3481,7 @@ textarea {
   display: flex;
   align-items: center;
   gap: 5px;
-  width: 100%;
+  width: 150%;
 }
 
 .phone-input-wrapper select {
@@ -3988,6 +3988,10 @@ p {
     width: 20px;
     height: 40px;
   }
+}
+.intl-tel-input,
+.iti{
+  width: 67%;
 }
 
 

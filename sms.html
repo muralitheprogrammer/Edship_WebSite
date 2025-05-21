@@ -38,7 +38,23 @@
   <link rel="stylesheet" href="assets/plugins/slick/slick-theme.css">
   <!-- Colorbox -->
   <link rel="stylesheet" href="assets/plugins/colorbox/colorbox.css">
+  <style>
+  .iti__country-list{
+    width: 459%;
+  }
+</style>
+<!-- ✅ jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+  <!-- ✅ intl-tel-input CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+
+  <!-- ✅ intl-tel-input JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+
+  <!-- ✅ Optional utils.js for validation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="index-page">
@@ -227,76 +243,76 @@
     </section><!-- /About Section -->
 
     <div id="bookingPopup">
-  <div class="popup-wrapper">
-    <button class="popup-close-icon" onclick="closeModal1(event)">&times;</button>
-    <div class="popup-title">BOOK A DEMO</div>
-    <p class="popup-description" style="text-align: center;">
+  <div class="enquiry-modal-content">
+  <span class="enquiry-close" onclick="closeModal1()">&times;</span>
+
+  <!-- Book a Demo Form Container -->
+  <div class="enquiry-form-section">
+    <h1 class="enquiry-title">BOOK A DEMO</h1>
+    <p class="enquiry-subtitle">
       Digitally revolutionize your school with Edship's all-in-one integrated platform fast, simple, and effective.
     </p>
 
-    <form id="demoRequestForm" class="demo-form">
-      <div class="form-field-half">
-        <label>Name</label>
-        <input type="text" placeholder="Enter your name" required>
-      </div>
-      <div class="form-field-half">
-        <label>Email</label>
-        <input type="email" placeholder="Enter your email" required>
-      </div>
-      <div class="form-field-half">
-        <label>School Name</label>
-        <input type="text" placeholder="Enter school name" required>
-      </div>
-      <div class="form-field-half">
-        <label>Type</label>
-        <select required>
-          <option value="">Select type</option>
-          <option value="School">School</option>
-          <option value="Tution Centre">Tution Centre</option>
-          <option value="College">College</option>
-          <option value="PlaySchool">PlaySchool</option>
-          <option value="Arabic College">Arabic College</option>
-          <option value="Group Organization">Group Organization</option>
-          <option value="University">University</option>
-        </select>
-      </div>
-      <div class="form-field-half">
-        <label>Your role in the school</label>
-        <select required>
-          <option value="">Select role</option>
-          <option value="Principal">Principal</option>
-          <option value="Teacher">Teacher</option>
-          <option value="Student">Student</option>
-          <option value="Manager">Manager</option>
-        </select>
-      </div>
-      <div class="form-field-half">
-        <label>Phone Number</label>
-        <div class="phone-field-container">
-          <select required style="padding: 10px; border-radius: 5px; margin-right: 5px;">
-           <option value="+91" selected>IN +91</option>
-              <option value="+1">US +1</option>
-              <option value="+44">GB +44</option>
-              <option value="+61">AU +61</option>
-              <option value="+971">AE +971</option>
-              <option value="+81">JP +81</option>
-              <option value="+49">DE +49</option>
-              <option value="+33">FR +33</option>
-              <option value="+880">BR +880</option>
-            <!-- Add more country codes as needed -->
-          </select>
-          <input type="tel" placeholder="Enter mobile number" required style="flex: 1;">
+    <form id="demoRequestForm" class="enquiry-form" onsubmit="return false;">
+      <div class="enquiry-row">
+        <div class="enquiry-group">
+          <label for="demo_name">Name</label>
+          <input type="text" id="demo_name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="enquiry-group">
+          <label for="demo_email">Email</label>
+          <input type="email" id="demo_email" name="email" placeholder="Enter your email" required>
         </div>
       </div>
-      <div class="form-field-full">
-        <label>Message</label>
-        <textarea rows="4" placeholder="Your message" required></textarea>
+
+      <div class="enquiry-row">
+        <div class="enquiry-group">
+          <label for="demo_school">School Name</label>
+          <input type="text" id="demo_school" name="school" placeholder="Enter school name" required>
+        </div>
+        <div class="enquiry-group">
+          <label for="demo_type">Type</label>
+          <select id="demo_type" name="type" required>
+            <option value="" disabled selected>Select type</option>
+            <option value="School">School</option>
+            <option value="Tution Centre">Tution Centre</option>
+            <option value="College">College</option>
+            <option value="PlaySchool">PlaySchool</option>
+            <option value="Arabic College">Arabic College</option>
+            <option value="Group Organization">Group Organization</option>
+            <option value="University">University</option>
+          </select>
+        </div>
       </div>
-      <div class="form-field-full">
-        <button type="submit" class="form-submit-btn">SUBMIT</button>
+
+      <div class="enquiry-row">
+        <div class="enquiry-group">
+          <label for="demo_role">Your role in the school</label>
+          <select id="demo_role" name="role" required>
+            <option value="" disabled selected>Select role</option>
+            <option value="Principal">Principal</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Student">Student</option>
+            <option value="Manager">Manager</option>
+          </select>
+        </div>
+        <div class="enquiry-group enquiry-phone">
+          <label for="mobile_code_demo">Phone Number</label>
+          <div class="enquiry-phone-wrapper">
+            <input type="tel" id="mobile_code" class="form-control" style="flex: 1; width: 136%;" placeholder="Phone Number" name="phone">
+          </div>
+        </div>
       </div>
+
+      <div class="enquiry-group">
+        <label for="demo_message">Message</label>
+        <textarea id="demo_message" name="message" rows="4" placeholder="Your message" required></textarea>
+      </div>
+
+      <button type="submit" class="enquiry-submit-btn" onclick="submitForm()">SUBMIT</button>
     </form>
   </div>
+</div>
 </div>
 
 
@@ -633,12 +649,12 @@
         <!-- Card 8: Hostel Management -->
         <div class="sms-module-card">
           <div class="sms-image-wrapper">
-            <img class="sms-module-image" src="assets/img/storeee.png" alt="Hostel Management">
-            <div class="sms-module-title">Store & Library</div>
+            <img class="sms-module-image" src="assets/img/e_store.png" alt="Hostel Management">
+            <div class="sms-module-title">E-Store</div>
           </div>
 
           <div class="sms-module-details">
-            <h2 class="sms-details-heading">Store & Library</h2>
+            <h2 class="sms-details-heading">E-Store</h2>
             <ul class="sms-features-list">
               <li class="sms-feature-item">Room Allocation</li>
               <li class="sms-feature-item">Hostel Attendance</li>
@@ -647,7 +663,7 @@
               <li class="sms-feature-item">Hostel Fee Collection</li>
               <li class="sms-feature-item">Complaint Management</li>
             </ul>
-            <div class="sms-details-footer">Store & Library</div>
+            <div class="sms-details-footer">E-Store</div>
           </div>
         </div>
 
@@ -778,80 +794,68 @@
                         and effective.
                       </p>
 
-                      <form id="enquiryForm" onsubmit="handleFormSubmit(event)" class="enquiry-form">
+                       <form id="enquiryrequestForm" class="enquiry-form" onsubmit="return false;">
+      <div class="enquiry-row">
+        <div class="enquiry-group">
+          <label for="demo_name">Name</label>
+          <input type="text" id="demo_name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="enquiry-group">
+          <label for="demo_email">Email</label>
+          <input type="email" id="demo_email" name="email" placeholder="Enter your email" required>
+        </div>
+      </div>
 
-                        <div class="enquiry-row">
-                          <div class="enquiry-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                          </div>
-                          <div class="enquiry-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                          </div>
-                        </div>
+      <div class="enquiry-row">
+        <div class="enquiry-group">
+          <label for="demo_school">School Name</label>
+          <input type="text" id="demo_school" name="school" placeholder="Enter school name" required>
+        </div>
+        <div class="enquiry-group">
+          <label for="demo_type">Type</label>
+          <select id="demo_type" name="type" required>
+            <option value="" disabled selected>Select type</option>
+            <option value="School">School</option>
+            <option value="Tution Centre">Tution Centre</option>
+            <option value="College">College</option>
+            <option value="PlaySchool">PlaySchool</option>
+            <option value="Arabic College">Arabic College</option>
+            <option value="Group Organization">Group Organization</option>
+            <option value="University">University</option>
+          </select>
+        </div>
+      </div>
 
-                        <div class="enquiry-row">
-                          <div class="enquiry-group">
-                            <label for="school">Name of your School</label>
-                            <input type="text" id="school" name="school" placeholder="Enter school name" required>
-                          </div>
-                          <div class="enquiry-group">
-                            <label for="type">Type</label>
-                            <select id="type" name="type" required>
-                              <option value="" disabled selected>Select role</option>
-                              <option value="Tution Centre">Tution Centre</option>
-                              <option value="College">College</option>
-                              <option value="PlaySchool">PlaySchool</option>
-                              <option value="Arabic College">Arabic College</option>
-                              <option value="Group Organization">Group Organization</option>
-                              <option value="University">University</option>
-                            </select>
-                          </div>
-                        </div>
+      <div class="enquiry-row">
+        <div class="enquiry-group">
+          <label for="demo_role">Your role in the school</label>
+          <select id="demo_role" name="role" required>
+            <option value="" disabled selected>Select role</option>
+            <option value="Principal">Principal</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Student">Student</option>
+            <option value="Manager">Manager</option>
+          </select>
+        </div>
+        <div class="enquiry-group enquiry-phone">
+          <label for="mobile_code_demo">Phone Number</label>
+          <div class="enquiry-phone-wrapper">
+            <input type="tel" id="mobile_codeq" class="form-control" style="flex: 1; width: 136%;" placeholder="Phone Number" name="phone">
+          </div>
+        </div>
+      </div>
 
-                        <div class="enquiry-row">
-                          <div class="enquiry-group">
-                            <label for="role">Your role in the school</label>
-                            <select id="role" name="role" required>
-                              <option value="" disabled selected>Select role</option>
-                              <option value="Principal">Principal</option>
-                              <option value="Teacher">Teacher</option>
-                              <option value="Student">Student</option>
-                              <option value="Manager">Manager</option>
-                            </select>
-                          </div>
-                          <!-- Phone Number Section -->
-                          <div class="enquiry-group enquiry-phone">
-                            <label for="phone">Phone Number</label>
-                            <div class="enquiry-phone-wrapper">
-                              <select id="country-code" name="countryCode" class="country-code-select" required>
-                                <option value="+91">+91</option>
-                                <option value="+1">+1</option>
-                                <option value="+44">+44</option>
-                                <option value="+61">+61</option>
-                                <option value="+65">+65</option>
-                                <!-- Add more codes as needed -->
-                              </select>
-                              <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" required
-                                pattern="[0-9]{6,12}">
-                            </div>
-                          </div>
+      <div class="enquiry-group">
+        <label for="demo_message">Message</label>
+        <textarea id="demo_message" name="message" rows="4" placeholder="Your message" required></textarea>
+      </div>
 
-
-                        </div>
-
-                        <div class="enquiry-group">
-                          <label for="message">Message</label>
-                          <textarea id="message" name="message" placeholder="Message"></textarea>
-                        </div>
-
-                        <button type="submit" class="enquiry-submit-btn">SUBMIT</button>
-                      </form>
+      <button type="submit" class="enquiry-submit-btn" onclick="enquiryForm()">SUBMIT</button>
+    </form>
                     </div>
 
                     <!-- Thank You Message -->
-                    <div id="thank-you-container" style="display:none;">
+                    <!-- <div id="thank-you-container" style="display:none;">
                       <div class="enquiry-thank-you">
                         <div class="enquiry-success-icon">✓</div>
                         <h2>Thank You!</h2>
@@ -860,7 +864,7 @@
                         <a href="assets/img/pdf/pdfschool.pdf" download="Edship_Brochure.pdf"
                           class="enquiry-submit-btn">Download e-Brochure</a>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
 
@@ -985,6 +989,22 @@
       const bg = item.getAttribute('data-bg');
       item.style.setProperty('--mobile-blur-bg', `url(${bg})`);
     });
+  </script>
+  <script>
+       const input = document.querySelector("#mobile_code");
+window.intlTelInput(input, {
+  initialCountry: "in",
+  separateDialCode: true,
+  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+});
+  </script>
+  <script>
+       const input1 = document.querySelector("#mobile_codeq");
+window.intlTelInput(input1, {
+  initialCountry: "in",
+  separateDialCode: true,
+  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+});
   </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

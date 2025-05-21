@@ -138,7 +138,13 @@ document.addEventListener('DOMContentLoaded', function() {
   form.reset()
 
   if(data){
-    showSuccessModal();
+    Swal.fire({
+        icon: 'success',
+        title: 'Thank You!',
+        text: 'Your demo request has been submitted successfully. Our team will get back to you shortly.',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK'
+      });
   }
 
   
@@ -157,37 +163,57 @@ function closeModal() {
     }, 4000);
   }
 
-function submitForm(){
-  const form = document.getElementById('enquiryForm');
+function submitForm() {
+  try {
+    const form = document.getElementById('enquiryForm');
 
-  if (!form.checkValidity()) {
-    form.reportValidity(); // shows built-in validation messages
-    return; // stop execution if invalid
-  }
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
 
-  const formData = new FormData(form);
-  const data = {};
+    const formData = new FormData(form);
+    const data = {};
 
-  // Collect data from inputs with 'name' attribute
-  formData.forEach((value, key) => {
-    data[key] = value;
-  });
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
 
-  // Get phone number and country code manually
-  const phoneWrapper = form.querySelector('.phone-input-wrapper');
-  const countryCode = phoneWrapper.querySelector('select').value;
-  const phone = phoneWrapper.querySelector('input[type="tel"]').value;
+    // Get phone input
+    const phoneInput = document.querySelector("#mobile_code");
 
-  data['Phone'] = `${countryCode} ${phone}`;
+    if (!phoneInput) {
+      throw new Error('Phone input not found');
+    }
 
-  console.log('Submitted Data:', data);
-  console.log('submitteed');
+    // Use intl-tel-input API to get selected country dial code
+    const iti = window.intlTelInputGlobals.getInstance(phoneInput);
+    const countryCode = iti.getSelectedCountryData().dialCode;
+    const phone = phoneInput.value;
 
-  form.reset()
+    data['Phone'] = `+${countryCode} ${phone}`;
 
-  if(data){
-    closeModal();
-    showSuccessModal();
+    console.log('Submitted Data:', data);
+
+    form.reset();
+
+    if (data) {
+      closeModal();
+      Swal.fire({
+        icon: 'success',
+        title: 'Thank You!',
+        text: 'Your demo request has been submitted successfully. Our team will get back to you shortly.',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK'
+      });
+    }
+  } catch (error) {
+    console.error('Form submission error:', error);
+     Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong while submitting the form. Please try again.',
+    });
   }
 }
 

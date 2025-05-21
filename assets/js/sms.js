@@ -686,14 +686,11 @@ document.addEventListener('DOMContentLoaded', function() {
       // });
       
       // For demo purposes, we'll just simulate a successful submission
+      
       setTimeout(() => {
         closeModal1();
         demoRequestForm.reset();
         
-        // Show thank you popup
-        setTimeout(() => {
-          openThankYouPopup();
-        }, 300);
       }, 1000);
     });
   }
@@ -710,5 +707,127 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+function submitForm() {
+  try {
+    const form = document.getElementById('demoRequestForm');
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const formData = new FormData(form);
+    const data = {};
+
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+
+    // Get phone input
+    const phoneInput = document.querySelector("#mobile_code");
+
+    if (!phoneInput) {
+      throw new Error('Phone input not found');
+    }
+
+    // Use intl-tel-input API to get selected country dial code
+    const iti = window.intlTelInputGlobals.getInstance(phoneInput);
+    const countryCode = iti.getSelectedCountryData().dialCode;
+    const phone = phoneInput.value;
+
+    data['Phone'] = `+${countryCode} ${phone}`;
+
+    console.log('Submitted Data:', data);
+
+    form.reset();
+
+    if (data) {
+      closeModal1();
+       Swal.fire({
+        icon: 'success',
+        title: 'Thank You!',
+        text: 'Your demo request has been submitted successfully. Our team will get back to you shortly.',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK'
+      });
+    }
+  } catch (error) {
+    console.error('Form submission error:', error);
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong while submitting the form. Please try again.',
+    });
+  }
+}
+function enquiryForm() {
+  try {
+    const form = document.getElementById('enquiryrequestForm');
+
+    // Validate the form before proceeding
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    // Collect form data
+    const formData = new FormData(form);
+    const data = {};
+
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+
+    // Get phone input and country code
+    const phoneInput = document.querySelector("#mobile_codeq");
+
+    if (!phoneInput) {
+      throw new Error('Phone input not found');
+    }
+
+    const iti = window.intlTelInputGlobals.getInstance(phoneInput);
+    const countryCode = iti.getSelectedCountryData().dialCode;
+    const phone = phoneInput.value;
+
+    data['Phone'] = `+${countryCode} ${phone}`;
+
+    // Log the final data
+    console.log('Submitted Data:', data);
+
+    // Reset the form
+    form.reset();
+
+    // Close modal (optional)
+    closeModal();
+
+    // Show success modal
+    Swal.fire({
+      icon: 'success',
+      title: 'Thank You!',
+      text: 'We have received your data and will get back to you shortly. Download the E-Guide using the Download button.',
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'Download E-Guid',
+       allowOutsideClick: false,
+  allowEscapeKey: false
+    }).then(() => {
+      // Trigger download without opening the PDF
+      const link = document.createElement('a');
+      link.href = 'assets/img/pdf/pdfschool.pdf';
+      link.download = 'Edship_Brochure.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+
+  } catch (error) {
+    console.error('Form submission error:', error);
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong while submitting the form. Please try again.',
+    });
+  }
+}
+
 
   

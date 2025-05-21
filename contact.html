@@ -40,7 +40,23 @@
   <link rel="stylesheet" href="assets/plugins/slick/slick-theme.css">
   <!-- Colorbox -->
   <link rel="stylesheet" href="assets/plugins/colorbox/colorbox.css">
+  <style>
+  .iti__country-list{
+    width: 459%;
+  }
+</style>
+<!-- ✅ jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+  <!-- ✅ intl-tel-input CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+
+  <!-- ✅ intl-tel-input JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+
+  <!-- ✅ Optional utils.js for validation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="index-page">
@@ -232,7 +248,7 @@
             <!-- Phone -->
             <div class="col-md-6">
               <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" class="form-control" placeholder="Your Phone Number" required>
+              <input type="tel" id="mobile_codeq" style="width: 150%;" class="form-control"  placeholder="Phone Number" name="phone">
             </div>
 
             <!-- School and Type -->
@@ -339,19 +355,7 @@
         <div class="enquiry-column">
           <label>Phone Number</label>
           <div class="phone-input-wrapper">
-            <select required style="padding: 10px; border-radius: 5px; margin-right: 5px;">
-              <option value="+91" selected>🇮🇳 +91</option>
-              <option value="+1">🇺🇸 +1</option>
-              <option value="+44">🇬🇧 +44</option>
-              <option value="+61">🇦🇺 +61</option>
-              <option value="+971">🇦🇪 +971</option>
-              <option value="+81">🇯🇵 +81</option>
-              <option value="+49">🇩🇪 +49</option>
-              <option value="+33">🇫🇷 +33</option>
-              <option value="+880">🇧🇩 +880</option>
-              <!-- Add more country codes as needed -->
-            </select>
-            <input type="tel" name="number" required placeholder="Enter mobile number"  style="flex: 1;">
+            <input type="tel" id="mobile_code" class="form-control" style="flex: 1;" placeholder="Phone Number" name="phone">
           </div>
         </div>
         <div class="enquiry-column-full">
@@ -483,6 +487,22 @@
   <!-- Main JS File -->
   
   <script src="assets/js/conatct.js"></script>
+  <script>
+       const input = document.querySelector("#mobile_code");
+window.intlTelInput(input, {
+  initialCountry: "in",
+  separateDialCode: true,
+  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+});
+  </script>
+  <script>
+       const input1 = document.querySelector("#mobile_codeq");
+window.intlTelInput(input1, {
+  initialCountry: "in",
+  separateDialCode: true,
+  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+});
+  </script>
   <!-- <script src="assets/js/main.js"></script> -->
 
 </body>
