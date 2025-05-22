@@ -893,26 +893,43 @@ function submitForm() {
     // Use intl-tel-input API to get selected country dial code
     const iti = window.intlTelInputGlobals.getInstance(phoneInput);
     const countryCode = iti.getSelectedCountryData().dialCode;
+    const countryData = iti.getSelectedCountryData();
     const phone = phoneInput.value;
+    const countryName = countryData.name;
 
-    data['Phone'] = `+${countryCode} ${phone}`;
+    data['Phone'] = `+${countryCode} ${phone} (${countryName})`;
 
-    console.log('Submitted Data:', data);
-
-    form.reset();
-
-    if (data) {
+    emailjs.send("service_4lkqwrh", "template_2o5ti0v", {
+     Name: document.getElementById("name").value,
+     Email: document.getElementById("email").value,
+     Phone: data['Phone'],
+    School: document.getElementById("schoolname").value,  // fixed
+    Type: document.getElementById("typeid").value,          // fixed
+  Message: document.getElementById("message").value,
+  "Your Role": document.getElementById("roleid").value,
+  email:document.getElementById("email").value    // fixed
+    })
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+      form.reset();
       closeModal();
-       Swal.fire({
+      Swal.fire({
         icon: 'success',
         title: 'Thank You!',
         text: 'Your demo request has been submitted successfully. Our team will get back to you shortly.',
         confirmButtonColor: '#3085d6',
         confirmButtonText: 'OK'
       });
-    }
+    }, function(error) {
+      console.error('FAILED...', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong while sending the email. Please try again.',
+      });
+    });
   } catch (error) {
-    console.error('Form submission error:', error);
+    console.log('Form submission error:', error);
     Swal.fire({
       icon: 'error',
       title: 'Oops...',

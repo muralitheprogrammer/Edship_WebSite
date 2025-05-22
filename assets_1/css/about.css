@@ -972,7 +972,8 @@ div.product ul.tabs li a:before,
     }
     
     .heading-primary {
-        font-size: 2.25rem; /* 32px at 14px base */
+        font-size: 2.25rem; 
+        display: none;/* 32px at 14px base */
     }
     
     .page-header__breadcrumbs {

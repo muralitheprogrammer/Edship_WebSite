@@ -93,6 +93,8 @@
   <!-- Add this in your HTML <head> or before the closing </body> tag -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
+
 </head>
 
 <body class="index-page">
@@ -765,19 +767,19 @@
       <form id="enquiryForm" class="enquiry-form" onsubmit="return false;">
         <div class="enquiry-column">
           <label>Name</label>
-          <input type="text" name="Name" placeholder="Enter your name" required>
+          <input type="text" name="Name" id="name" placeholder="Enter your name" required>
         </div>
         <div class="enquiry-column">
           <label>Email</label>
-          <input type="email" name="Email" placeholder="Enter your email" required>
+          <input type="email" name="Email" id="email" placeholder="Enter your email" required>
         </div>
         <div class="enquiry-column">
           <label>School Name</label>
-          <input type="text" name="SchoolName" placeholder="Enter school name" required>
+          <input type="text" name="SchoolName" id="schoolname" placeholder="Enter school name" required>
         </div>
         <div class="enquiry-column">
           <label>Type</label>
-          <select required name="type">
+          <select required name="type" id="typeid">
             <option value="">Select type</option>
             <option value="School">School</option>
             <option value="Tution Centre">Tution Centre</option>
@@ -790,7 +792,7 @@
         </div>
         <div class="enquiry-column">
           <label>Your role in the school</label>
-          <select required name="role">
+          <select required name="role" id="roleid">
             <option value="">Select role</option>
             <option value="Principal">Principal</option>
             <option value="Teacher">Teacher</option>
@@ -806,7 +808,7 @@
         </div>
         <div class="enquiry-column-full">
           <label>Message</label>
-          <textarea rows="4" name="message" placeholder="Your message"  required></textarea>
+          <textarea rows="4" name="message" id="message" placeholder="Your message"  required></textarea>
         </div>
         <div class="enquiry-column-full">
           <button type="button" id="submit-button" class="submit-button" onclick="submitForm()">SUBMIT</button>
@@ -918,6 +920,20 @@ window.intlTelInput(input, {
   </script>
 
 
+<!-- EmailJS library -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- Initialization and submitForm function -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof emailjs !== "undefined") {
+      emailjs.init("UPN_xZL1X_Tcuk2aa");
+      console.log("EmailJS loaded.");
+    } else {
+      console.error("EmailJS failed to load.");
+    }
+  });
+</script>
 
 
   <!-- Vendor JS Files -->
